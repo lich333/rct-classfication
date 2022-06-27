@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run healthy-shoulder-app.py
+web: sh setup.sh && streamlit run healthy-rct-app.py
