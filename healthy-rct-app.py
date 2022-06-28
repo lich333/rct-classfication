@@ -5,12 +5,14 @@ import numpy as np
 import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
-import os
+import joblib
+model = joblib.load('final_model.p')
+# import os
 #Load the saved model
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-# model = os.path.join(APP_ROOT,'final_model.p') 
-with open("final_model.p",'rb') as f:
-   model = pkl.load(f,encoding='bytes')
+# # model = os.path.join(APP_ROOT,'final_model.p') 
+# with open("final_model.p",'rb') as f:
+#    model = pkl.load(f,encoding='bytes')
 
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
