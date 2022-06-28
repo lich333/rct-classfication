@@ -15,7 +15,7 @@ st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",ini
 
 
 
-def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
+def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
  
     
     # Pre-processing user input   
@@ -98,7 +98,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucl
     
     
 
-    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
+    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
@@ -112,7 +112,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucl
     # front end elements of the web page 
 html_temp = """ 
     <div style ="background-color:pink;padding:13px"> 
-    <h1 style ="color:black;text-align:center;">Healthy Heart App</h1> 
+    <h1 style ="color:black;text-align:center;">Diagnosis of RCT App</h1> 
     </div> 
     """
       
@@ -130,7 +130,7 @@ bear=st.radio("BEAR HUG", ['+','-'])
 belly=st.radio("BELLY PRESS", ['+','-'])
 erls=st.radio("ERLS", ['+','-'])
 ss=st.selectbox('the strength of supraspinatus ',range(0,5,1))
-IS=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
+ISs=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
 ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
 ases=st.selectbox ("ASES",range(1,100,1))
 const=st.selectbox ("Constant-Murley",range(1,100,1))
@@ -159,9 +159,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
-pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
-
-
+pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
 
 if st.button("Predict"):    
