@@ -10,7 +10,7 @@ import os
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # model = os.path.join(APP_ROOT,'final_model.p') 
 with open("final_model.p",'rb') as f:
-   model = pkl.load(f,encoding='iso-8859-1')
+   model = pkl.load(f,encoding='bytes')
 
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
@@ -105,7 +105,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
     prediction = model.predict(user_input)
-    prediction = np.argmax(prediction,axis=-1)
+   
 
     return prediction
 
