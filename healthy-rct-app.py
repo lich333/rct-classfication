@@ -6,7 +6,7 @@ import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 #Load the saved model
-model = pkl.load(open("https://github.com/lich333/rct-classfication/blob/main/final_model.p","rb"))
+model = pkl.loads(open("final_model.p","rb"))
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
