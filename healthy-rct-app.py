@@ -51,7 +51,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
  
-    
+    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     # Pre-processing user input   
     if sex=="male":
         sex=0
@@ -129,7 +129,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         
     # ss is ssc ases const ucla
     
-    
+  
     
 
     user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
@@ -166,7 +166,6 @@ if st.button("Predict"):
     st.success('You have lower risk of getting a rct!')
     
    
-
 st.sidebar.subheader("About App")
 
 st.sidebar.info("This web app is helps you to find out whether you are at a risk of developing a RCT.")
