@@ -28,17 +28,17 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucl
         
     if vas=="0-4":
         vas=0
-    elif vas == "5-7"：
+    elif vas == "5-7":
         vas=1
-    else：vas=2
+    else: vas=2
     
     if time=="0-3":
         time=0
-    elif time == "3-6"：
+    elif time == "3-6":
         time=1
-    elif time == "6-12"：
+    elif time == "6-12":
         time=2
-    else：time = 3
+    else: time = 3
         
     if trauma=="Yes":
         trauma=1 
@@ -46,33 +46,33 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucl
         
     if flex=="0-45":
         flex=0
-    elif flex == "45-90"：
+    elif flex == "45-90":
         flex=1
-    elif flex == "90-135"：
+    elif flex == "90-135":
         flex=2
-    else：flex = 3
+    else: flex = 3
         
     if abd=="0-45":
         abd=0
-    elif abd == "45-90"：
+    elif abd == "45-90":
         abd=1
-    elif abd == "90-135"：
+    elif abd == "90-135":
         abd=2
-    else：abd = 3
+    else: abd = 3
         
     if er=="0-20":
         er=0
-    elif er == "20-40"：
+    elif er == "20-40":
         er=1
-    elif er == "40-60"：
+    elif er == "40-60":
         er=2
-    else：er = 3
+    else: er = 3
         
     if ir=="below S1":
         ir=0
-    elif ir == "L1-L5"：
+    elif ir == "L1-L5":
         ir=1
-    else：ir = 2
+    else: ir = 2
     
     if jobe=="+":
         jobe=1 
