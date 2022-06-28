@@ -14,6 +14,40 @@ model = os.path.join(APP_ROOT, 'final_model.p')
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
 
+    # front end elements of the web page 
+html_temp = """ 
+    <div style ="background-color:pink;padding:13px"> 
+    <h1 style ="color:black;text-align:center;">Diagnosis of RCT App</h1> 
+    </div> 
+    """
+      
+# display the front end aspect
+st.markdown(html_temp, unsafe_allow_html = True) 
+
+
+
+# following lines create boxes in which user can enter data required to make prediction
+age=st.selectbox ("Age",range(1,121,1))
+sex = st.radio("Select Gender: ", ('male', 'female'))
+side=st.radio("is the painful shoulder your dominant side?", ['Yes','No'])
+trauma=st.radio("have you get injuried in your shoulder?", ['Yes','No'])
+jobe=st.radio("JOBE test", ['+','-'])
+bear=st.radio("BEAR HUG", ['+','-'])
+belly=st.radio("BELLY PRESS", ['+','-'])
+erls=st.radio("ERLS", ['+','-'])
+ss=st.selectbox('the strength of supraspinatus ',range(0,5,1))
+ISs=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
+ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
+ases=st.selectbox ("ASES",range(1,100,1))
+const=st.selectbox ("Constant-Murley",range(1,100,1))
+ucla=st.selectbox ("UCLA",range(1,100,1))
+ 
+flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
+abd=st.selectbox('Abduction',("0-45°","45-90°","90-135°","135-180°"))
+er=st.selectbox('External rotation',("0-20°","20-40°","40-60°","60-80°"))
+ir=st.selectbox('Internal rotation',("below S1","L1-L5","above T12"))
+vas=st.selectbox('VAS',("0-4","5-7","8-10°"))
+time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
  
@@ -105,44 +139,6 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
     prediction = model.predict(user_input)
 
     return prediction
-
-    
-
-       
-    # front end elements of the web page 
-html_temp = """ 
-    <div style ="background-color:pink;padding:13px"> 
-    <h1 style ="color:black;text-align:center;">Diagnosis of RCT App</h1> 
-    </div> 
-    """
-      
-# display the front end aspect
-st.markdown(html_temp, unsafe_allow_html = True) 
-st.subheader('by Amlan Mohanty ')
-      
-# following lines create boxes in which user can enter data required to make prediction
-age=st.selectbox ("Age",range(1,121,1))
-sex = st.radio("Select Gender: ", ('male', 'female'))
-side=st.radio("is the painful shoulder your dominant side?", ['Yes','No'])
-trauma=st.radio("have you get injuried in your shoulder?", ['Yes','No'])
-jobe=st.radio("JOBE test", ['+','-'])
-bear=st.radio("BEAR HUG", ['+','-'])
-belly=st.radio("BELLY PRESS", ['+','-'])
-erls=st.radio("ERLS", ['+','-'])
-ss=st.selectbox('the strength of supraspinatus ',range(0,5,1))
-ISs=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
-ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
-ases=st.selectbox ("ASES",range(1,100,1))
-const=st.selectbox ("Constant-Murley",range(1,100,1))
-ucla=st.selectbox ("UCLA",range(1,100,1))
- 
-flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
-abd=st.selectbox('Abduction',("0-45°","45-90°","90-135°","135-180°"))
-er=st.selectbox('External rotation',("0-20°","20-40°","40-60°","60-80°"))
-ir=st.selectbox('Internal rotation',("below S1","L1-L5","above T12"))
-vas=st.selectbox('VAS',("0-4","5-7","8-10°"))
-time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
-
 
 
 
