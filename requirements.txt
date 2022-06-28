@@ -2,5 +2,4 @@ numpy
 pandas
 streamlit
 mlxtend
-xgboost
-scikit-learn==0.22.2
+scikit-learn==1.0.2
