@@ -8,8 +8,8 @@ scal=MinMaxScaler()
 import os
 #Load the saved model
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-with os.path.open('APP_ROOT/final_model.p','rb') as f:
- model = pkl.load(f)
+model = os.path.join(APP_ROOT,'final_model.p') 
+model = pkl.load(model)
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
