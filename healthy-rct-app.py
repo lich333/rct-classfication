@@ -3,6 +3,7 @@ import base64
 import sklearn
 import numpy as np
 import pickle as pkl
+import xgboost
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 #Load the saved model
