@@ -132,7 +132,7 @@ ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
 ases=st.selectbox ("ASES",range(1,100,1))
 const=st.selectbox ("Constant-Murley",range(1,100,1))
 ucla=st.selectbox ("UCLA",range(1,100,1))
-vas,time 
+ 
 flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
 abd=st.selectbox('Abduction',("0-45°","45-90°","90-135°","135-180°"))
 er=st.selectbox('External rotation',("0-20°","20-40°","40-60°","60-80°"))
@@ -156,7 +156,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
-pred=preprocess(age,sex,cp,trestbps,restecg,chol,fbs,thalach,exang,oldpeak,slope,ca,thal)
+pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,IS,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
 
 
