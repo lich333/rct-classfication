@@ -12,7 +12,7 @@ import os
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # model = os.path.join(APP_ROOT,'final_model.p') 
 
-model = pkl.load('final_model.p',encoding='bytes')
+model=pkl.load(open("final_model.p","rb"))
 
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
