@@ -6,12 +6,11 @@ import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 import os
-import joblib
-model = joblib.load('final_model.p')
+
 
 #Load the saved model
-# APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-# # model = os.path.join(APP_ROOT,'final_model.p') 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+model = os.path.join(APP_ROOT,'final_model.p') 
 
 #model = pkl.load(f,encoding='bytes')
 
