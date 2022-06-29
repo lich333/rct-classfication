@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 import sklearn
 import numpy as np
-import pickle 
+import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 import os
@@ -12,7 +12,7 @@ import os
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # model = os.path.join(APP_ROOT,'final_model.p') 
 
-model = pkl.load(f,encoding='bytes')
+model = pkl.load('final_model.p',encoding='bytes')
 
 
 st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
