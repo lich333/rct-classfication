@@ -10,9 +10,10 @@ import joblib
 
 #Load the saved model
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-model_a = os.path.join(APP_ROOT,'final_model.p') 
-with open(model_a,'rb') as file:
+model_b = os.path.join(APP_ROOT,'final_model.p') 
+with open(model_b,'rb') as file:
    model = joblib.load(file)
+   
 # model=pkl.load(open("final_model.p","rb"))
 
 
