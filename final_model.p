@@ -6,7 +6,7 @@
       "name": "diagnosis_of_rct.ipynb",
       "provenance": [],
       "mount_file_id": "1Sz8RjKv3ZhNnky3WM1TlnZMT0fFjbQcH",
-      "authorship_tag": "ABX9TyPI5ZYYSfbP7+lgjHofwDAQ",
+      "authorship_tag": "ABX9TyPYKVufhspEpf5JdtdaubeZ",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -30,13 +30,13 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 32,
+      "execution_count": 40,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "oE4ZM0K8vd7f",
-        "outputId": "6a67d0b1-42d4-4778-c738-e23f6b74eea2"
+        "outputId": "3427dd4a-ddda-494f-c0f0-b72f347c6317"
       },
       "outputs": [
         {
@@ -63,7 +63,7 @@
       "metadata": {
         "id": "prAumTtnwWjt"
       },
-      "execution_count": 33,
+      "execution_count": 41,
       "outputs": []
     },
     {
@@ -78,9 +78,9 @@
           "height": 235
         },
         "id": "MQbX0wIewg1M",
-        "outputId": "fe9a7343-b65f-47bd-c584-df5db6f2440a"
+        "outputId": "964a45ce-25aa-4a70-e964-365d8469e216"
       },
-      "execution_count": 34,
+      "execution_count": 42,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -104,7 +104,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-88c39b41-ad25-4e24-9a9e-183bc6eeb6e4\">\n",
+              "  <div id=\"df-c607e781-055a-4e99-82ed-d3518332ea4a\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -272,7 +272,7 @@
               "</table>\n",
               "<p>5 rows × 25 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-88c39b41-ad25-4e24-9a9e-183bc6eeb6e4')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-c607e781-055a-4e99-82ed-d3518332ea4a')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -323,12 +323,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-88c39b41-ad25-4e24-9a9e-183bc6eeb6e4 button.colab-df-convert');\n",
+              "          document.querySelector('#df-c607e781-055a-4e99-82ed-d3518332ea4a button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-88c39b41-ad25-4e24-9a9e-183bc6eeb6e4');\n",
+              "          const element = document.querySelector('#df-c607e781-055a-4e99-82ed-d3518332ea4a');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -351,7 +351,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 34
+          "execution_count": 42
         }
       ]
     },
@@ -363,7 +363,7 @@
       "metadata": {
         "id": "DE4qFpH479x5"
       },
-      "execution_count": 35,
+      "execution_count": 43,
       "outputs": []
     },
     {
@@ -374,7 +374,7 @@
       "metadata": {
         "id": "19iJDBGF8cCs"
       },
-      "execution_count": 36,
+      "execution_count": 44,
       "outputs": []
     },
     {
@@ -388,9 +388,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "hBESZYrW8lnT",
-        "outputId": "c8d57ddc-9348-48d5-c7df-8bc5540620ca"
+        "outputId": "a06bef2c-2b24-4ac8-b4e6-ae0c7598d67f"
       },
-      "execution_count": 37,
+      "execution_count": 45,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -401,7 +401,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 37
+          "execution_count": 45
         }
       ]
     },
@@ -414,7 +414,7 @@
       "metadata": {
         "id": "d5M_houk8p8_"
       },
-      "execution_count": 38,
+      "execution_count": 46,
       "outputs": []
     },
     {
@@ -426,7 +426,7 @@
       "metadata": {
         "id": "KBFPQmDt8y3m"
       },
-      "execution_count": 39,
+      "execution_count": 47,
       "outputs": []
     },
     {
@@ -437,7 +437,7 @@
       "metadata": {
         "id": "drroWaCN88x8"
       },
-      "execution_count": 40,
+      "execution_count": 48,
       "outputs": []
     },
     {
@@ -448,7 +448,7 @@
       "metadata": {
         "id": "f3RAN6B19DOK"
       },
-      "execution_count": 41,
+      "execution_count": 49,
       "outputs": []
     },
     {
@@ -464,9 +464,9 @@
           "height": 534
         },
         "id": "btVVRQgS9Eex",
-        "outputId": "f4ee8e2f-9fed-4681-a948-593254939c0e"
+        "outputId": "a99e9a81-a3f8-4762-a917-387bfecc9c1e"
       },
-      "execution_count": 42,
+      "execution_count": 50,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -518,7 +518,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-6432c156-9a6c-4321-bf0e-69969b5c7590\">\n",
+              "  <div id=\"df-07b8fc14-f669-47b7-ba56-7f2320c38bd4\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -854,7 +854,7 @@
               "</table>\n",
               "<p>1945 rows × 23 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-6432c156-9a6c-4321-bf0e-69969b5c7590')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-07b8fc14-f669-47b7-ba56-7f2320c38bd4')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -905,12 +905,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-6432c156-9a6c-4321-bf0e-69969b5c7590 button.colab-df-convert');\n",
+              "          document.querySelector('#df-07b8fc14-f669-47b7-ba56-7f2320c38bd4 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-6432c156-9a6c-4321-bf0e-69969b5c7590');\n",
+              "          const element = document.querySelector('#df-07b8fc14-f669-47b7-ba56-7f2320c38bd4');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -933,7 +933,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 42
+          "execution_count": 50
         }
       ]
     },
@@ -947,7 +947,7 @@
       "metadata": {
         "id": "S7wEhDky9Qpq"
       },
-      "execution_count": 43,
+      "execution_count": 51,
       "outputs": []
     },
     {
@@ -965,9 +965,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "qDBg5wjJ9nU5",
-        "outputId": "f112764e-8d6a-4c1a-c4ae-013c121a44d5"
+        "outputId": "35fd3f91-e6c5-4030-ea6e-24d287de7cac"
       },
-      "execution_count": 44,
+      "execution_count": 52,
       "outputs": [
         {
           "output_type": "stream",
@@ -1052,9 +1052,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "2eihjkNG9u0s",
-        "outputId": "82167780-643c-4cae-fc27-53adc671be78"
+        "outputId": "f46b1898-5e72-46a9-d3fe-b8d133aa3911"
       },
-      "execution_count": 45,
+      "execution_count": 53,
       "outputs": [
         {
           "output_type": "stream",
@@ -1112,9 +1112,9 @@
           "height": 554
         },
         "id": "33xIa3-n-eQt",
-        "outputId": "d1206c5a-8d2d-4d7b-ce5f-a334bdb1b169"
+        "outputId": "caf4f9ab-f8f5-4479-c2e9-7c4a59dab59e"
       },
-      "execution_count": 46,
+      "execution_count": 54,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1180,7 +1180,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-afc77eec-d1cf-4d61-82d5-0d2059c2cdc3\">\n",
+              "  <div id=\"df-05edfadb-4e46-41d0-b629-912c8a8cb390\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -1503,7 +1503,7 @@
               "</table>\n",
               "<p>1945 rows × 20 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-afc77eec-d1cf-4d61-82d5-0d2059c2cdc3')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-05edfadb-4e46-41d0-b629-912c8a8cb390')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -1554,12 +1554,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-afc77eec-d1cf-4d61-82d5-0d2059c2cdc3 button.colab-df-convert');\n",
+              "          document.querySelector('#df-05edfadb-4e46-41d0-b629-912c8a8cb390 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-afc77eec-d1cf-4d61-82d5-0d2059c2cdc3');\n",
+              "          const element = document.querySelector('#df-05edfadb-4e46-41d0-b629-912c8a8cb390');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -1582,7 +1582,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 46
+          "execution_count": 54
         }
       ]
     },
@@ -1597,9 +1597,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "IYMJhywp-jkO",
-        "outputId": "1493b865-2cc2-4730-ca25-71d422d83cb6"
+        "outputId": "c0d3a52a-9c1e-445f-e4dd-5be74e3a381f"
       },
-      "execution_count": 47,
+      "execution_count": 55,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1621,7 +1621,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 47
+          "execution_count": 55
         }
       ]
     },
@@ -1643,9 +1643,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "MP0aKmV5__7U",
-        "outputId": "c3d0fd41-9df2-414b-ac27-404c953915ee"
+        "outputId": "69b48750-2a5b-4121-c48f-02b08fee6c9d"
       },
-      "execution_count": 48,
+      "execution_count": 56,
       "outputs": [
         {
           "output_type": "stream",
@@ -1682,9 +1682,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "u3LgGW1nAR3B",
-        "outputId": "6bf04d1e-5c40-4b07-9422-f6f7c435d7b2"
+        "outputId": "4d61215e-5ee2-4aa9-c3dd-03f432099e99"
       },
-      "execution_count": 49,
+      "execution_count": 57,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1696,7 +1696,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 49
+          "execution_count": 57
         }
       ]
     },
@@ -1708,7 +1708,7 @@
       "metadata": {
         "id": "ck8-1OqeA9t_"
       },
-      "execution_count": 50,
+      "execution_count": 58,
       "outputs": []
     },
     {
@@ -1725,9 +1725,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "ycyVkcuTBE9T",
-        "outputId": "e5c3e86c-36ac-4f83-bc4c-c973ea3cca8d"
+        "outputId": "5962f575-e76b-430b-ce0b-5b1e088d9c20"
       },
-      "execution_count": 51,
+      "execution_count": 59,
       "outputs": [
         {
           "output_type": "stream",
@@ -1761,9 +1761,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "yBK3lMxCB6z8",
-        "outputId": "e1cc02d3-54fe-4829-a043-bc927f624900"
+        "outputId": "4f074bba-5583-42ec-ce31-0296a243a1e0"
       },
-      "execution_count": 52,
+      "execution_count": 60,
       "outputs": [
         {
           "output_type": "stream",
@@ -1874,9 +1874,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "xtosfP3vCTKk",
-        "outputId": "c6f86872-043b-4ab8-c06d-c7bc4f46bbcd"
+        "outputId": "97a25e4f-e458-42ed-b5fc-d2de755da781"
       },
-      "execution_count": 53,
+      "execution_count": 61,
       "outputs": [
         {
           "output_type": "stream",
@@ -1895,7 +1895,7 @@
       "metadata": {
         "id": "TTPY1yLPA4VF"
       },
-      "execution_count": 53,
+      "execution_count": 61,
       "outputs": []
     },
     {
@@ -1912,9 +1912,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "tdJEjB1BDfkP",
-        "outputId": "8cafdd20-4182-49ff-e124-8831d540467e"
+        "outputId": "bc7c1d2b-59e1-4eac-9f42-be6021965d9c"
       },
-      "execution_count": 54,
+      "execution_count": 62,
       "outputs": [
         {
           "output_type": "stream",
@@ -1944,7 +1944,7 @@
       "metadata": {
         "id": "ZPjAiDD5ENsn"
       },
-      "execution_count": 55,
+      "execution_count": 63,
       "outputs": []
     },
     {
@@ -1958,7 +1958,7 @@
       "metadata": {
         "id": "GQqz1gIcEgFW"
       },
-      "execution_count": 56,
+      "execution_count": 64,
       "outputs": []
     },
     {
@@ -1973,7 +1973,7 @@
       "metadata": {
         "id": "1qPk3ydrEjYX"
       },
-      "execution_count": 57,
+      "execution_count": 65,
       "outputs": []
     },
     {
@@ -1986,7 +1986,7 @@
       "metadata": {
         "id": "VTuA8pwKEp71"
       },
-      "execution_count": 58,
+      "execution_count": 66,
       "outputs": []
     },
     {
@@ -2000,7 +2000,7 @@
       "metadata": {
         "id": "T95EdyUdEsm4"
       },
-      "execution_count": 59,
+      "execution_count": 67,
       "outputs": []
     },
     {
@@ -2023,7 +2023,7 @@
       "metadata": {
         "id": "ceM8hGRgE75x"
       },
-      "execution_count": 60,
+      "execution_count": 68,
       "outputs": []
     },
     {
@@ -2038,7 +2038,7 @@
       "metadata": {
         "id": "kUMNgHUTE9Uc"
       },
-      "execution_count": 61,
+      "execution_count": 69,
       "outputs": []
     },
     {
@@ -2047,12 +2047,15 @@
         "# import pickle\n",
         "# pickle.dump(xgb_clf,open(\"final_model.p\",\"wb\"))\n",
         "import joblib\n",
-        "joblib.dump(xgb_clf,open(\"final_model.p\",\"wb\"))"
+        "model_ = open(\"final_model.p\",\"wb\")\n",
+        "joblib.dump(xgb_clf,model_)\n",
+        "model_.close()\n",
+        "\n"
       ],
       "metadata": {
         "id": "GKaXvK8EFSem"
       },
-      "execution_count": 63,
+      "execution_count": 70,
       "outputs": []
     },
     {
@@ -2063,30 +2066,30 @@
       "metadata": {
         "id": "oGTxdFixTzj4"
       },
-      "execution_count": null,
+      "execution_count": 70,
       "outputs": []
     },
     {
       "cell_type": "code",
       "source": [
         "import sklearn\n",
-        "sklearn_version = sklearn.__version__\n",
-        "print(sklearn_version)"
+        "sklearn_version =joblib.__version__\n",
+        "print(sklearn_version)\n"
       ],
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "ZAbdqzFoFPCx",
-        "outputId": "3b6877a1-06d4-46a8-d3f6-e6bf9bf09cb2"
+        "outputId": "e45c3124-fa7e-4974-97f4-fcd539b79f76"
       },
-      "execution_count": 64,
+      "execution_count": 71,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "1.0.2\n"
+            "1.1.0\n"
           ]
         }
       ]
@@ -2100,10 +2103,107 @@
         "from pyngrok import ngrok"
       ],
       "metadata": {
-        "id": "9JUMaN1jFtzL"
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9JUMaN1jFtzL",
+        "outputId": "fbd9b627-7a46-44db-d712-a6c2d3e69388"
       },
-      "execution_count": null,
-      "outputs": []
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: streamlit in /usr/local/lib/python3.7/dist-packages (1.10.0)\n",
+            "Requirement already satisfied: typing-extensions in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.1.1)\n",
+            "Requirement already satisfied: rich in /usr/local/lib/python3.7/dist-packages (from streamlit) (12.4.4)\n",
+            "Requirement already satisfied: cachetools>=4.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.2.4)\n",
+            "Requirement already satisfied: validators in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.20.0)\n",
+            "Requirement already satisfied: semver in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.13.0)\n",
+            "Requirement already satisfied: requests in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.23.0)\n",
+            "Requirement already satisfied: watchdog in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.1.9)\n",
+            "Requirement already satisfied: importlib-metadata>=1.4 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.11.4)\n",
+            "Requirement already satisfied: pympler>=0.9 in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.0.1)\n",
+            "Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.21.6)\n",
+            "Requirement already satisfied: python-dateutil in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.8.2)\n",
+            "Requirement already satisfied: protobuf<4,>=3.12 in /usr/local/lib/python3.7/dist-packages (from streamlit) (3.17.3)\n",
+            "Requirement already satisfied: pandas>=0.21.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.3.5)\n",
+            "Requirement already satisfied: attrs in /usr/local/lib/python3.7/dist-packages (from streamlit) (21.4.0)\n",
+            "Requirement already satisfied: gitpython!=3.1.19 in /usr/local/lib/python3.7/dist-packages (from streamlit) (3.1.27)\n",
+            "Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (7.1.2)\n",
+            "Requirement already satisfied: packaging in /usr/local/lib/python3.7/dist-packages (from streamlit) (21.3)\n",
+            "Requirement already satisfied: altair>=3.2.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.2.0)\n",
+            "Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (7.1.2)\n",
+            "Requirement already satisfied: toml in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.10.2)\n",
+            "Requirement already satisfied: pyarrow in /usr/local/lib/python3.7/dist-packages (from streamlit) (6.0.1)\n",
+            "Requirement already satisfied: tzlocal in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.5.1)\n",
+            "Requirement already satisfied: pydeck>=0.1.dev5 in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.7.1)\n",
+            "Requirement already satisfied: tornado>=5.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (6.1)\n",
+            "Requirement already satisfied: blinker in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.4)\n",
+            "Requirement already satisfied: entrypoints in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (0.4)\n",
+            "Requirement already satisfied: jinja2 in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (2.11.3)\n",
+            "Requirement already satisfied: toolz in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (0.11.2)\n",
+            "Requirement already satisfied: jsonschema>=3.0 in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (4.3.3)\n",
+            "Requirement already satisfied: gitdb<5,>=4.0.1 in /usr/local/lib/python3.7/dist-packages (from gitpython!=3.1.19->streamlit) (4.0.9)\n",
+            "Requirement already satisfied: smmap<6,>=3.0.1 in /usr/local/lib/python3.7/dist-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19->streamlit) (5.0.0)\n",
+            "Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/dist-packages (from importlib-metadata>=1.4->streamlit) (3.8.0)\n",
+            "Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (0.18.1)\n",
+            "Requirement already satisfied: importlib-resources>=1.4.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (5.7.1)\n",
+            "Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas>=0.21.0->streamlit) (2022.1)\n",
+            "Requirement already satisfied: six>=1.9 in /usr/local/lib/python3.7/dist-packages (from protobuf<4,>=3.12->streamlit) (1.15.0)\n",
+            "Requirement already satisfied: ipywidgets>=7.0.0 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (7.7.0)\n",
+            "Requirement already satisfied: traitlets>=4.3.2 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (5.1.1)\n",
+            "Requirement already satisfied: ipykernel>=5.1.2 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (6.15.0)\n",
+            "Requirement already satisfied: jupyter-client>=6.1.12 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (7.3.4)\n",
+            "Requirement already satisfied: ipython>=7.23.1 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (7.34.0)\n",
+            "Requirement already satisfied: matplotlib-inline>=0.1 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.1.3)\n",
+            "Requirement already satisfied: psutil in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (5.4.8)\n",
+            "Requirement already satisfied: pyzmq>=17 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (23.1.0)\n",
+            "Requirement already satisfied: debugpy>=1.0 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (1.0.0)\n",
+            "Requirement already satisfied: nest-asyncio in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (1.5.5)\n",
+            "Requirement already satisfied: jedi>=0.16 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.18.1)\n",
+            "Requirement already satisfied: pickleshare in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.7.5)\n",
+            "Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (57.4.0)\n",
+            "Requirement already satisfied: backcall in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.2.0)\n",
+            "Requirement already satisfied: decorator in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.4.2)\n",
+            "Requirement already satisfied: pexpect>4.3 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.8.0)\n",
+            "Requirement already satisfied: pygments in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (2.6.1)\n",
+            "Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (3.0.30)\n",
+            "Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (3.6.0)\n",
+            "Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.2.0)\n",
+            "Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.1.0)\n",
+            "Requirement already satisfied: nbformat>=4.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.4.0)\n",
+            "Requirement already satisfied: parso<0.9.0,>=0.8.0 in /usr/local/lib/python3.7/dist-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.8.3)\n",
+            "Requirement already satisfied: MarkupSafe>=0.23 in /usr/local/lib/python3.7/dist-packages (from jinja2->altair>=3.2.0->streamlit) (2.0.1)\n",
+            "Requirement already satisfied: jupyter-core>=4.9.2 in /usr/local/lib/python3.7/dist-packages (from jupyter-client>=6.1.12->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.10.0)\n",
+            "Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.7/dist-packages (from nbformat>=4.2.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (2.15.3)\n",
+            "Requirement already satisfied: ptyprocess>=0.5 in /usr/local/lib/python3.7/dist-packages (from pexpect>4.3->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.7.0)\n",
+            "Requirement already satisfied: wcwidth in /usr/local/lib/python3.7/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.2.5)\n",
+            "Requirement already satisfied: notebook>=4.4.1 in /usr/local/lib/python3.7/dist-packages (from widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.3.1)\n",
+            "Requirement already satisfied: nbconvert in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.6.1)\n",
+            "Requirement already satisfied: terminado>=0.8.1 in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.13.3)\n",
+            "Requirement already satisfied: Send2Trash in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.8.0)\n",
+            "Requirement already satisfied: mistune<2,>=0.8.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.8.4)\n",
+            "Requirement already satisfied: testpath in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.6.0)\n",
+            "Requirement already satisfied: bleach in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.0.0)\n",
+            "Requirement already satisfied: defusedxml in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.7.1)\n",
+            "Requirement already satisfied: pandocfilters>=1.4.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.5.0)\n",
+            "Requirement already satisfied: webencodings in /usr/local/lib/python3.7/dist-packages (from bleach->nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.5.1)\n",
+            "Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.7/dist-packages (from packaging->streamlit) (3.0.9)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (2022.6.15)\n",
+            "Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (1.24.3)\n",
+            "Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (3.0.4)\n",
+            "Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (2.10)\n",
+            "Requirement already satisfied: commonmark<0.10.0,>=0.9.0 in /usr/local/lib/python3.7/dist-packages (from rich->streamlit) (0.9.1)\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: pyngrok===4.1.1 in /usr/local/lib/python3.7/dist-packages (4.1.1)\n",
+            "Requirement already satisfied: future in /usr/local/lib/python3.7/dist-packages (from pyngrok===4.1.1) (0.16.0)\n",
+            "Requirement already satisfied: PyYAML in /usr/local/lib/python3.7/dist-packages (from pyngrok===4.1.1) (3.13)\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "code",
@@ -2300,10 +2400,22 @@
         "  st.info(\"Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.\") "
       ],
       "metadata": {
-        "id": "AtiO8nd_F9XW"
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AtiO8nd_F9XW",
+        "outputId": "67bbdc04-1c5e-4049-eb3f-788176f35c4a"
       },
-      "execution_count": null,
-      "outputs": []
+      "execution_count": 73,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting diagnosis-rct-app.py\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "code",
@@ -2313,10 +2425,54 @@
         "url"
       ],
       "metadata": {
-        "id": "vTcdIhhUGBJz"
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 552
+        },
+        "id": "vTcdIhhUGBJz",
+        "outputId": "1aeab5fa-7f32-45cd-ecc8-d2d208c3ad72"
       },
-      "execution_count": null,
-      "outputs": []
+      "execution_count": 74,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "nohup: appending output to 'nohup.out'\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "t=2022-07-01T02:54:15+0000 lvl=warn msg=\"failed to start tunnel\" pg=/api/tunnels id=80a5e7b3dc271e08 err=\"Your account may not run more than 2 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2BK9MmhkARPGPFQLwHTO180ggK0, tn_2BK9MpPnfZmjShKSseRD3QTt0j8\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n\"\n",
+            "\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "PyngrokNgrokHTTPError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mHTTPError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pyngrok/ngrok.py\u001b[0m in \u001b[0;36mapi_request\u001b[0;34m(url, method, data, params, timeout)\u001b[0m\n\u001b[1;32m    288\u001b[0m     \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 289\u001b[0;31m         \u001b[0mresponse\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0murlopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mrequest\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdata\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    290\u001b[0m         \u001b[0mresponse_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mresponse\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdecode\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"utf-8\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36murlopen\u001b[0;34m(url, data, timeout, cafile, capath, cadefault, context)\u001b[0m\n\u001b[1;32m    221\u001b[0m         \u001b[0mopener\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_opener\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 222\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0mopener\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0murl\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdata\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    223\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36mopen\u001b[0;34m(self, fullurl, data, timeout)\u001b[0m\n\u001b[1;32m    530\u001b[0m             \u001b[0mmeth\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mgetattr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprocessor\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmeth_name\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 531\u001b[0;31m             \u001b[0mresponse\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mmeth\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mreq\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mresponse\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    532\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36mhttp_response\u001b[0;34m(self, request, response)\u001b[0m\n\u001b[1;32m    640\u001b[0m             response = self.parent.error(\n\u001b[0;32m--> 641\u001b[0;31m                 'http', request, response, code, msg, hdrs)\n\u001b[0m\u001b[1;32m    642\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36merror\u001b[0;34m(self, proto, *args)\u001b[0m\n\u001b[1;32m    568\u001b[0m             \u001b[0margs\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0mdict\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'default'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'http_error_default'\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m+\u001b[0m \u001b[0morig_args\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 569\u001b[0;31m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_call_chain\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    570\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36m_call_chain\u001b[0;34m(self, chain, kind, meth_name, *args)\u001b[0m\n\u001b[1;32m    502\u001b[0m             \u001b[0mfunc\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mgetattr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mhandler\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmeth_name\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 503\u001b[0;31m             \u001b[0mresult\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfunc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    504\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mresult\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/lib/python3.7/urllib/request.py\u001b[0m in \u001b[0;36mhttp_error_default\u001b[0;34m(self, req, fp, code, msg, hdrs)\u001b[0m\n\u001b[1;32m    648\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mhttp_error_default\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mreq\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mfp\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcode\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmsg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mhdrs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 649\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mHTTPError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mreq\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mfull_url\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcode\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmsg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mhdrs\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mfp\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    650\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mHTTPError\u001b[0m: HTTP Error 502: Bad Gateway",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mPyngrokNgrokHTTPError\u001b[0m                     Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-74-88dbf2927dec>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mget_ipython\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msystem\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'nohup streamlit run healthy-heart-app.py &'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0murl\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mngrok\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconnect\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mport\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m'8501'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0murl\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pyngrok/ngrok.py\u001b[0m in \u001b[0;36mconnect\u001b[0;34m(port, proto, name, options, pyngrok_config)\u001b[0m\n\u001b[1;32m    172\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    173\u001b[0m     tunnel = NgrokTunnel(api_request(\"{}/api/{}\".format(api_url, \"tunnels\"), method=\"POST\", data=options,\n\u001b[0;32m--> 174\u001b[0;31m                                      timeout=pyngrok_config.request_timeout))\n\u001b[0m\u001b[1;32m    175\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    176\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mproto\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"http\"\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0;34m\"bind_tls\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0moptions\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0moptions\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"bind_tls\"\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32mFalse\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pyngrok/ngrok.py\u001b[0m in \u001b[0;36mapi_request\u001b[0;34m(url, method, data, params, timeout)\u001b[0m\n\u001b[1;32m    312\u001b[0m         raise PyngrokNgrokHTTPError(\"ngrok client exception, API returned {}: {}\".format(status_code, response_data),\n\u001b[1;32m    313\u001b[0m                                     \u001b[0me\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0murl\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 314\u001b[0;31m                                     status_code, e.msg, e.hdrs, response_data)\n\u001b[0m\u001b[1;32m    315\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mURLError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    316\u001b[0m         \u001b[0;32mraise\u001b[0m \u001b[0mPyngrokNgrokURLError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"ngrok client exception, URLError: {}\"\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mformat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0me\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreason\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreason\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mPyngrokNgrokHTTPError\u001b[0m: ngrok client exception, API returned 502: {\"error_code\":103,\"status_code\":502,\"msg\":\"failed to start tunnel\",\"details\":{\"err\":\"Your account may not run more than 2 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2BK9MmhkARPGPFQLwHTO180ggK0, tn_2BK9MpPnfZmjShKSseRD3QTt0j8\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n\"}}\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "code",
