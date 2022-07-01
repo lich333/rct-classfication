@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 import sklearn
 import numpy as np
-import pickle as pkl
+import pickle 
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 import os
@@ -13,8 +13,14 @@ import os
 # model_b = os.path.join(APP_ROOT,'final_model.p') 
 # model_a = open('final_model.pkl','rb')
 # model = pkl.load(model_a)
-with open("final_model.pkl", "rb") as pickle_file:
-    model = pickle.load(pickle_file)
+from pathlib import Path
+pkl_path = Path(__file__).parents[1] / 'rct-clssiction/final_model.pkl'
+xgb_pickle = open(pkl_path, 'rb')
+xgb = pickle.load(xgb_pickle)
+xgb_pickle.close()
+
+# with open("final_model.pkl", "rb") as pickle_file:
+#     model = pickle.load(pickle_file)
    
 # model=pkl.load(open("final_model.p","rb"))
 
@@ -111,7 +117,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
-    prediction = model.predict(user_input)
+    prediction = xgb.predict(user_input)
    
 
     return prediction
