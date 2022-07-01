@@ -6,7 +6,7 @@ import pickle
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 import os
-import joblib
+
 
 
 
