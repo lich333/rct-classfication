@@ -11,7 +11,7 @@ import os
 #Load the saved model
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # model_b = os.path.join(APP_ROOT,'final_model.p') 
-model_a = open('rct-clssiction/final_model.p',rb')
+model_a = open('rct-clssiction/final_model.p','rb')
 model = pkl.load(model_a)
    
 # model=pkl.load(open("final_model.p","rb"))
