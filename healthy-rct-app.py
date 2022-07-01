@@ -6,6 +6,8 @@ import pickle
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 import os
+import joblib
+
 
 
 #Load the saved model
@@ -16,7 +18,7 @@ pkl_path = os.path.join(APP_ROOT,'final_model.pkl')
 
 
 xgb_pickle = open(pkl_path, 'rb')
-xgb = pickle.load(xgb_pickle)
+xgb = joblib.load(xgb_pickle)
 xgb_pickle.close()
 
 # with open("final_model.pkl", "rb") as pickle_file:
