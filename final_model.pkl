@@ -1,22 +1,4 @@
 {
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "name": "diagnosis_of_rct.ipynb",
-      "provenance": [],
-      "mount_file_id": "1Sz8RjKv3ZhNnky3WM1TlnZMT0fFjbQcH",
-      "authorship_tag": "ABX9TyMiWAWsDBOchhyzEgLV03Bp",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
   "cells": [
     {
       "cell_type": "markdown",
@@ -30,13 +12,13 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 34,
+      "execution_count": 104,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "oE4ZM0K8vd7f",
-        "outputId": "35d35647-6ae0-4c95-a86e-ca91fa8786d4"
+        "outputId": "f5835caa-5375-4e78-87fc-119ad51aca96"
       },
       "outputs": [
         {
@@ -54,33 +36,29 @@
     },
     {
       "cell_type": "code",
+      "execution_count": 105,
+      "metadata": {
+        "id": "prAumTtnwWjt"
+      },
+      "outputs": [],
       "source": [
         "import numpy as np \n",
         "import pandas as pd \n",
         "import matplotlib.pyplot as plt\n",
         "import seaborn as sns"
-      ],
-      "metadata": {
-        "id": "prAumTtnwWjt"
-      },
-      "execution_count": 35,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data = pd.read_csv(\"/content/drive/MyDrive/rct_machinelearning/lcc.csv\",header=None)\n",
-        "data.head()"
-      ],
+      "execution_count": 106,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 235
         },
         "id": "MQbX0wIewg1M",
-        "outputId": "304bdcbe-f871-4988-d18b-4bc95282611b"
+        "outputId": "c1eb96d4-d22c-47c2-d3e2-57ca65ae69a3"
       },
-      "execution_count": 36,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -104,7 +82,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-72a4060a-b895-4cc0-9ee8-d4b5dc0d8b4f\">\n",
+              "  <div id=\"df-125b97aa-c883-4452-96bb-555faad04061\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -272,7 +250,7 @@
               "</table>\n",
               "<p>5 rows × 25 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-72a4060a-b895-4cc0-9ee8-d4b5dc0d8b4f')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-125b97aa-c883-4452-96bb-555faad04061')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -323,12 +301,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-72a4060a-b895-4cc0-9ee8-d4b5dc0d8b4f button.colab-df-convert');\n",
+              "          document.querySelector('#df-125b97aa-c883-4452-96bb-555faad04061 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-72a4060a-b895-4cc0-9ee8-d4b5dc0d8b4f');\n",
+              "          const element = document.querySelector('#df-125b97aa-c883-4452-96bb-555faad04061');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -351,46 +329,46 @@
             ]
           },
           "metadata": {},
-          "execution_count": 36
+          "execution_count": 106
         }
+      ],
+      "source": [
+        "data = pd.read_csv(\"/content/drive/MyDrive/rct_machinelearning/lcc.csv\",header=None)\n",
+        "data.head()"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data = data.sample(frac=1)\n"
-      ],
+      "execution_count": 107,
       "metadata": {
         "id": "DE4qFpH479x5"
       },
-      "execution_count": 37,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "data = data.sample(frac=1)\n"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "columns = ['ID','Sex' , 'Age' ,'Dominant side operated' ,'vas' , 'Time','Trauma-related','Flex' , 'Abd' , 'ER' , 'IR' , 'Jobe' , 'Bear hug' ,'Belly press' ,'ERLS' ,  'SS','IS','SSC','ASES' , 'Quick-DASH' ,'Constant-Murley','UCLA','SST' , 'classier','we']"
-      ],
+      "execution_count": 108,
       "metadata": {
         "id": "19iJDBGF8cCs"
       },
-      "execution_count": 38,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "columns = ['ID','Sex' , 'Age' ,'Dominant side operated' ,'vas' , 'Time','Trauma-related','Flex' , 'Abd' , 'ER' , 'IR' , 'Jobe' , 'Bear hug' ,'Belly press' ,'ERLS' ,  'SS','IS','SSC','ASES' , 'Quick-DASH' ,'Constant-Murley','UCLA','SST' , 'classier','we']"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "list1 = np.arange(25)\n",
-        "list1"
-      ],
+      "execution_count": 109,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "hBESZYrW8lnT",
-        "outputId": "35ca4b2c-6094-42b6-a954-f333b70c3309"
+        "outputId": "2c834f60-7811-45ae-f574-c424c7bc59c1"
       },
-      "execution_count": 39,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -401,72 +379,71 @@
             ]
           },
           "metadata": {},
-          "execution_count": 39
+          "execution_count": 109
         }
+      ],
+      "source": [
+        "list1 = np.arange(25)\n",
+        "list1"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "dict1 = dict(zip(list1,columns))\n",
-        "data = data.rename(columns=dict1)"
-      ],
+      "execution_count": 110,
       "metadata": {
         "id": "d5M_houk8p8_"
       },
-      "execution_count": 40,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "dict1 = dict(zip(list1,columns))\n",
+        "data = data.rename(columns=dict1)"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data['IR'] = data['IR'].replace(to_replace=['thi','butt','S 1','L5','L 3','L 1','T 11','T 9','T 7','T 5','T 3'],value=[0,1,2,3,4,5,6,7,8,9,10])\n",
-        "data['Sex'] = data['Sex'].replace(to_replace=['Male','Female',],value=[0,1])"
-      ],
+      "execution_count": 111,
       "metadata": {
         "id": "KBFPQmDt8y3m"
       },
-      "execution_count": 41,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "data['IR'] = data['IR'].replace(to_replace=['thi','butt','S 1','L5','L 3','L 1','T 11','T 9','T 7','T 5','T 3'],value=[0,1,2,3,4,5,6,7,8,9,10])\n",
+        "data['Sex'] = data['Sex'].replace(to_replace=['Male','Female',],value=[0,1])"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data['Trauma-related'] = data['Trauma-related'].fillna(value= 0)"
-      ],
+      "execution_count": 112,
       "metadata": {
         "id": "drroWaCN88x8"
       },
-      "execution_count": 42,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "data['Trauma-related'] = data['Trauma-related'].fillna(value= 0)"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data = data.drop(['we'], axis=1)"
-      ],
+      "execution_count": 113,
       "metadata": {
         "id": "f3RAN6B19DOK"
       },
-      "execution_count": 43,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "data = data.drop(['we'], axis=1)"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data1 = data\n",
-        "data1.set_index('ID',inplace=True)\n",
-        "data1"
-      ],
+      "execution_count": 114,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 534
         },
         "id": "btVVRQgS9Eex",
-        "outputId": "4a24d5d2-21ef-49a9-8c59-4ff4d2bb171f"
+        "outputId": "39714468-4e86-4ce0-804e-c57bb304089a"
       },
-      "execution_count": 44,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -518,7 +495,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-61eb632f-1c6c-4d48-8ac4-0d5640c1320f\">\n",
+              "  <div id=\"df-b90de456-4b71-4aac-9c28-432a490217ce\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -854,7 +831,7 @@
               "</table>\n",
               "<p>1945 rows × 23 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-61eb632f-1c6c-4d48-8ac4-0d5640c1320f')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-b90de456-4b71-4aac-9c28-432a490217ce')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -905,12 +882,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-61eb632f-1c6c-4d48-8ac4-0d5640c1320f button.colab-df-convert');\n",
+              "          document.querySelector('#df-b90de456-4b71-4aac-9c28-432a490217ce button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-61eb632f-1c6c-4d48-8ac4-0d5640c1320f');\n",
+              "          const element = document.querySelector('#df-b90de456-4b71-4aac-9c28-432a490217ce');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -933,41 +910,38 @@
             ]
           },
           "metadata": {},
-          "execution_count": 44
+          "execution_count": 114
         }
+      ],
+      "source": [
+        "data1 = data\n",
+        "data1.set_index('ID',inplace=True)\n",
+        "data1"
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": 115,
+      "metadata": {
+        "id": "S7wEhDky9Qpq"
+      },
+      "outputs": [],
       "source": [
         "data_ = data1.copy()\n",
         "data_B = data_[data_['classier'] == 1]\n",
         "data_C = data_[data_['classier'] == 0]"
-      ],
-      "metadata": {
-        "id": "S7wEhDky9Qpq"
-      },
-      "execution_count": 45,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "data_B = data_B.fillna(value = data_B.mean())\n",
-        "# data_B.info()\n",
-        "data_C = data_C.fillna(value = data_C.mean())\n",
-        "# data_C.info()\n",
-        "data_ = pd.concat((data_C,data_B))\n",
-        "data_.info()"
-      ],
+      "execution_count": 116,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "qDBg5wjJ9nU5",
-        "outputId": "50c31a0e-bc96-4f9f-b3dc-f5d5c91f561f"
+        "outputId": "071d9e00-fec8-452b-d402-69dc152c0b5b"
       },
-      "execution_count": 46,
       "outputs": [
         {
           "output_type": "stream",
@@ -1005,56 +979,26 @@
             "memory usage: 364.7 KB\n"
           ]
         }
+      ],
+      "source": [
+        "data_B = data_B.fillna(value = data_B.mean())\n",
+        "# data_B.info()\n",
+        "data_C = data_C.fillna(value = data_C.mean())\n",
+        "# data_C.info()\n",
+        "data_ = pd.concat((data_C,data_B))\n",
+        "data_.info()"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "cc = [-1,45,90,135,190]\n",
-        "aa = [-1,45,90,135,190]\n",
-        "bb = [-1,20,40,60,90]\n",
-        "dd = [-1,5,8,11]\n",
-        "ee = [-10,3,7,11]\n",
-        "ff = [-10,3,6,12,1000]\n",
-        "\n",
-        "flexlabels = ['a','b','c','d']\n",
-        "abdlabels = ['e','f','g','h']\n",
-        "erlabels = ['i','j','k','l']\n",
-        "irlables = ['q','w','e']\n",
-        "vaslables = ['q','w','e']\n",
-        "timelables = ['q','w','e','r']\n",
-        "\n",
-        "pd.cut(data_['Flex'],cc,labels=flexlabels)\n",
-        "pd.cut(data_['Abd'],aa,labels=abdlabels)\n",
-        "pd.cut(data_['ER'],bb,labels=erlabels)\n",
-        "pd.cut(data_['IR'],dd,labels=irlables)\n",
-        "pd.cut(data_['vas'],ee,labels=vaslables)\n",
-        "pd.cut(data_['Time'],ff,labels=timelables)\n",
-        "\n",
-        "data_['Flexion'] = pd.cut(data_['Flex'],cc,labels=flexlabels)\n",
-        "data_['Abduction'] = pd.cut(data_['Abd'],aa,labels=abdlabels)\n",
-        "data_['External rotation'] = pd.cut(data_['ER'],bb,labels=erlabels)\n",
-        "data_['Internal rotation'] = pd.cut(data_['IR'],dd,labels=irlables)\n",
-        "data_['VAS'] = pd.cut(data_['vas'],ee,labels=vaslables)\n",
-        "data_['Duration of symptoms'] = pd.cut(data_['Time'],ff,labels=timelables)\n",
-        "\n",
-        "data_['Flexion'] = data_['Flexion'].replace(to_replace=['a','b','c','d'],value=[0,1,2,3])\n",
-        "data_['Abduction'] = data_['Abduction'].replace(to_replace=['e','f','g','h'],value=[0,1,2,3])\n",
-        "data_['External rotation'] = data_['External rotation'].replace(to_replace=['i','j','k','l'],value=[0,1,2,3])\n",
-        "data_['Internal rotation'] = data_['Internal rotation'].replace(to_replace=['q','w','e'],value=[0,1,2])\n",
-        "data_['VAS'] = data_['VAS'].replace(to_replace=['q','w','e'],value=[0,1,2])\n",
-        "data_['Duration of symptoms'] = data_['Duration of symptoms'].replace(to_replace=['q','w','e','r'],value=[0,1,2,3])\n",
-        "\n",
-        "data_.info()"
-      ],
+      "execution_count": 117,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "2eihjkNG9u0s",
-        "outputId": "a054ca1b-6c58-405c-f1da-d04be86e2957"
+        "outputId": "58173a78-b9c9-4511-d34e-90c30b4a5e57"
       },
-      "execution_count": 47,
       "outputs": [
         {
           "output_type": "stream",
@@ -1098,23 +1042,57 @@
             "memory usage: 455.9 KB\n"
           ]
         }
+      ],
+      "source": [
+        "cc = [-1,45,90,135,190]\n",
+        "aa = [-1,45,90,135,190]\n",
+        "bb = [-1,20,40,60,90]\n",
+        "dd = [-1,5,8,11]\n",
+        "ee = [-10,3,7,11]\n",
+        "ff = [-10,3,6,12,1000]\n",
+        "\n",
+        "flexlabels = ['a','b','c','d']\n",
+        "abdlabels = ['e','f','g','h']\n",
+        "erlabels = ['i','j','k','l']\n",
+        "irlables = ['q','w','e']\n",
+        "vaslables = ['q','w','e']\n",
+        "timelables = ['q','w','e','r']\n",
+        "\n",
+        "pd.cut(data_['Flex'],cc,labels=flexlabels)\n",
+        "pd.cut(data_['Abd'],aa,labels=abdlabels)\n",
+        "pd.cut(data_['ER'],bb,labels=erlabels)\n",
+        "pd.cut(data_['IR'],dd,labels=irlables)\n",
+        "pd.cut(data_['vas'],ee,labels=vaslables)\n",
+        "pd.cut(data_['Time'],ff,labels=timelables)\n",
+        "\n",
+        "data_['Flexion'] = pd.cut(data_['Flex'],cc,labels=flexlabels)\n",
+        "data_['Abduction'] = pd.cut(data_['Abd'],aa,labels=abdlabels)\n",
+        "data_['External rotation'] = pd.cut(data_['ER'],bb,labels=erlabels)\n",
+        "data_['Internal rotation'] = pd.cut(data_['IR'],dd,labels=irlables)\n",
+        "data_['VAS'] = pd.cut(data_['vas'],ee,labels=vaslables)\n",
+        "data_['Duration of symptoms'] = pd.cut(data_['Time'],ff,labels=timelables)\n",
+        "\n",
+        "data_['Flexion'] = data_['Flexion'].replace(to_replace=['a','b','c','d'],value=[0,1,2,3])\n",
+        "data_['Abduction'] = data_['Abduction'].replace(to_replace=['e','f','g','h'],value=[0,1,2,3])\n",
+        "data_['External rotation'] = data_['External rotation'].replace(to_replace=['i','j','k','l'],value=[0,1,2,3])\n",
+        "data_['Internal rotation'] = data_['Internal rotation'].replace(to_replace=['q','w','e'],value=[0,1,2])\n",
+        "data_['VAS'] = data_['VAS'].replace(to_replace=['q','w','e'],value=[0,1,2])\n",
+        "data_['Duration of symptoms'] = data_['Duration of symptoms'].replace(to_replace=['q','w','e','r'],value=[0,1,2,3])\n",
+        "\n",
+        "data_.info()"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "features = data_.drop(columns=['classier','vas','Time','Flex' , 'Abd' , 'ER' , 'IR' ,'SST','Quick-DASH'])\n",
-        "features"
-      ],
+      "execution_count": 118,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 554
         },
         "id": "33xIa3-n-eQt",
-        "outputId": "a6700fb0-26f1-43ca-d881-e873000013a3"
+        "outputId": "9edbbf50-08e0-478a-e9d9-ec3715e4564a"
       },
-      "execution_count": 48,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1180,7 +1158,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-89ebd8c2-9b0b-4af0-ada5-9c408881e2f6\">\n",
+              "  <div id=\"df-bba86fbe-7675-4444-9d18-7b50b70e46e7\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -1503,7 +1481,7 @@
               "</table>\n",
               "<p>1945 rows × 20 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-89ebd8c2-9b0b-4af0-ada5-9c408881e2f6')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-bba86fbe-7675-4444-9d18-7b50b70e46e7')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -1554,12 +1532,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-89ebd8c2-9b0b-4af0-ada5-9c408881e2f6 button.colab-df-convert');\n",
+              "          document.querySelector('#df-bba86fbe-7675-4444-9d18-7b50b70e46e7 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-89ebd8c2-9b0b-4af0-ada5-9c408881e2f6');\n",
+              "          const element = document.querySelector('#df-bba86fbe-7675-4444-9d18-7b50b70e46e7');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -1582,24 +1560,24 @@
             ]
           },
           "metadata": {},
-          "execution_count": 48
+          "execution_count": 118
         }
+      ],
+      "source": [
+        "features = data_.drop(columns=['classier','vas','Time','Flex' , 'Abd' , 'ER' , 'IR' ,'SST','Quick-DASH'])\n",
+        "features"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "target = data_.classier\n",
-        "target"
-      ],
+      "execution_count": 119,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "IYMJhywp-jkO",
-        "outputId": "f591fdbb-8900-40fb-93ae-1bc64cf5e41f"
+        "outputId": "8f77721a-6afd-4671-c0ec-3645dd3eebea"
       },
-      "execution_count": 49,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1621,31 +1599,24 @@
             ]
           },
           "metadata": {},
-          "execution_count": 49
+          "execution_count": 119
         }
+      ],
+      "source": [
+        "target = data_.classier\n",
+        "target"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "from sklearn.preprocessing import StandardScaler,MinMaxScaler\n",
-        "transfer= StandardScaler()\n",
-        "features_ = transfer.fit_transform(features)\n",
-        "from sklearn.model_selection import train_test_split\n",
-        "train_features, test_features, train_target, test_target = train_test_split(features,target,test_size = 0.2, random_state = 99)\n",
-        "print(train_features.shape)\n",
-        "print(train_target.shape)\n",
-        "print(test_features.shape)\n",
-        "print(test_target.shape)"
-      ],
+      "execution_count": 120,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "MP0aKmV5__7U",
-        "outputId": "394ffdb2-cfaa-40f9-fa94-1508dd1b41ba"
+        "outputId": "c0edbaab-5485-4493-9f5c-687a5c6b0d30"
       },
-      "execution_count": 50,
       "outputs": [
         {
           "output_type": "stream",
@@ -1657,10 +1628,43 @@
             "(389,)\n"
           ]
         }
+      ],
+      "source": [
+        "from sklearn.preprocessing import StandardScaler,MinMaxScaler\n",
+        "transfer= StandardScaler()\n",
+        "features_ = transfer.fit_transform(features)\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "train_features, test_features, train_target, test_target = train_test_split(features,target,test_size = 0.2, random_state = 99)\n",
+        "print(train_features.shape)\n",
+        "print(train_target.shape)\n",
+        "print(test_features.shape)\n",
+        "print(test_target.shape)"
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": 121,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u3LgGW1nAR3B",
+        "outputId": "5c3a3c9b-317c-4706-c993-3fac9e34c3a7"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "VotingClassifier(estimators=[('lr', LogisticRegression(solver='liblinear')),\n",
+              "                             ('svc', SVC()),\n",
+              "                             ('tree', DecisionTreeClassifier())])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 121
+        }
+      ],
       "source": [
         "from sklearn.model_selection import KFold,ShuffleSplit,cross_val_score\n",
         "kf = KFold(n_splits=10)\n",
@@ -1676,58 +1680,29 @@
         "    estimators=[('lr', log_clf), ('svc', svm_clf), ('tree', tree_clf)],\n",
         "    voting='hard')\n",
         "voting_clf.fit(train_features, train_target)\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "u3LgGW1nAR3B",
-        "outputId": "41a018c2-78bf-4158-a8cc-35f390c15157"
-      },
-      "execution_count": 51,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "VotingClassifier(estimators=[('lr', LogisticRegression(solver='liblinear')),\n",
-              "                             ('svc', SVC()),\n",
-              "                             ('tree', DecisionTreeClassifier())])"
-            ]
-          },
-          "metadata": {},
-          "execution_count": 51
-        }
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "from sklearn.metrics import confusion_matrix, roc_curve,accuracy_score,precision_score,recall_score"
-      ],
+      "execution_count": 122,
       "metadata": {
         "id": "ck8-1OqeA9t_"
       },
-      "execution_count": 52,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "from sklearn.metrics import confusion_matrix, roc_curve,accuracy_score,precision_score,recall_score"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "from sklearn.metrics import classification_report\n",
-        ">>> y_true = test_target\n",
-        ">>> y_pred = voting_clf.predict(test_features)\n",
-        ">>> target_names = ['RCT', 'none']\n",
-        ">>> print(classification_report(y_true, y_pred, target_names=target_names))"
-      ],
+      "execution_count": 123,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "ycyVkcuTBE9T",
-        "outputId": "1490476b-b5cc-467a-9b0f-e979527d2018"
+        "outputId": "da3858c5-4abd-4aca-a378-291e5023f49a"
       },
-      "execution_count": 53,
       "outputs": [
         {
           "output_type": "stream",
@@ -1744,26 +1719,25 @@
             "\n"
           ]
         }
+      ],
+      "source": [
+        "from sklearn.metrics import classification_report\n",
+        ">>> y_true = test_target\n",
+        ">>> y_pred = voting_clf.predict(test_features)\n",
+        ">>> target_names = ['RCT', 'none']\n",
+        ">>> print(classification_report(y_true, y_pred, target_names=target_names))"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "from sklearn.ensemble import RandomForestClassifier\n",
-        "np.random.seed(42)\n",
-        "for i in range(1,40,1):\n",
-        "  print(f\"With {i*10} estimators:\")\n",
-        "  clf2=RandomForestClassifier(n_estimators=i*10,max_depth=i,random_state=i).fit(train_features,train_target)\n",
-        "  print(f\"Accuracy: {clf2.score(test_features,test_target)*100:2f}%\")"
-      ],
+      "execution_count": 124,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "yBK3lMxCB6z8",
-        "outputId": "2343b0d4-a2d7-4b29-a575-07d3d6ff129d"
+        "outputId": "e8bcbe27-2f75-4a51-8325-e7efb1f6509c"
       },
-      "execution_count": 54,
       "outputs": [
         {
           "output_type": "stream",
@@ -1849,10 +1823,35 @@
             "Accuracy: 81.748072%\n"
           ]
         }
+      ],
+      "source": [
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "np.random.seed(42)\n",
+        "for i in range(1,40,1):\n",
+        "  print(f\"With {i*10} estimators:\")\n",
+        "  clf2=RandomForestClassifier(n_estimators=i*10,max_depth=i,random_state=i).fit(train_features,train_target)\n",
+        "  print(f\"Accuracy: {clf2.score(test_features,test_target)*100:2f}%\")"
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "xtosfP3vCTKk",
+        "outputId": "fed581e0-3de5-4473-8f1a-b474e3978602"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "0.90\n"
+          ]
+        }
+      ],
       "source": [
         "import xgboost\n",
         "xgb_clf = xgboost.XGBClassifier(learning_rate=0.3,\n",
@@ -1868,143 +1867,140 @@
         "\n",
         "xgboost_version = xgboost.__version__\n",
         "print(xgboost_version)"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "xtosfP3vCTKk",
-        "outputId": "95e074c6-11b8-4e7f-c123-2d122eb37718"
-      },
-      "execution_count": 55,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "0.90\n"
-          ]
-        }
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        ""
-      ],
+      "execution_count": null,
       "metadata": {
+        "colab": {
+          "background_save": true
+        },
         "id": "TTPY1yLPA4VF"
       },
-      "execution_count": 55,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        ""
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "tdJEjB1BDfkP",
+        "outputId": "00a3527b-19f2-4e26-e921-ad7e2e36b6f3"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "              precision    recall  f1-score   support\n",
+            "\n",
+            "         RCT       0.85      0.93      0.89       302\n",
+            "        none       0.65      0.43      0.51        87\n",
+            "\n",
+            "    accuracy                           0.82       389\n",
+            "   macro avg       0.75      0.68      0.70       389\n",
+            "weighted avg       0.80      0.82      0.81       389\n",
+            "\n"
+          ]
+        }
+      ],
       "source": [
         "from sklearn.metrics import classification_report\n",
         ">>> y_true = test_target\n",
         ">>> y_pred = xgb_clf.predict(test_features)\n",
         ">>> target_names = ['RCT', 'none']\n",
         ">>> print(classification_report(y_true, y_pred, target_names=target_names))"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "tdJEjB1BDfkP",
-        "outputId": "416d29a1-3a4b-4cc4-ac8b-ba8e12a0e8e6"
-      },
-      "execution_count": 56,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "              precision    recall  f1-score   support\n",
-            "\n",
-            "         RCT       0.85      0.94      0.89       302\n",
-            "        none       0.68      0.44      0.53        87\n",
-            "\n",
-            "    accuracy                           0.83       389\n",
-            "   macro avg       0.77      0.69      0.71       389\n",
-            "weighted avg       0.81      0.83      0.81       389\n",
-            "\n"
-          ]
-        }
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "ZPjAiDD5ENsn"
+      },
+      "outputs": [],
       "source": [
         "# !pip install shap\n",
         "# import shap\n",
         "# import numpy\n",
         "# import sklearn\n"
-      ],
-      "metadata": {
-        "id": "ZPjAiDD5ENsn"
-      },
-      "execution_count": 57,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "GQqz1gIcEgFW"
+      },
+      "outputs": [],
       "source": [
         "# # Create object that can calculate shap values\n",
         "# explainer = shap.TreeExplainer(xgb_clf)\n",
         "# # Calculate Shap values\n",
         "# shap_values = explainer.shap_values(train_features)"
-      ],
-      "metadata": {
-        "id": "GQqz1gIcEgFW"
-      },
-      "execution_count": 58,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": 125,
+      "metadata": {
+        "id": "1qPk3ydrEjYX"
+      },
+      "outputs": [],
       "source": [
         "# shap_sum = np.abs(shap_values).mean(axis=0)\n",
         "# importance_df = pd.DataFrame([train_features.columns.tolist(), shap_sum.tolist()]).T\n",
         "# importance_df.columns = ['column_name', 'shap_importance']\n",
         "# importance_df = importance_df.sort_values('shap_importance', ascending=False)\n",
         "# importance_df"
-      ],
-      "metadata": {
-        "id": "1qPk3ydrEjYX"
-      },
-      "execution_count": 59,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": 126,
+      "metadata": {
+        "id": "VTuA8pwKEp71"
+      },
+      "outputs": [],
       "source": [
         "# shap.summary_plot(shap_values,train_features,plot_type=\"bar\",show = False)\n",
         "# myfig = plt.gcf()\n",
         "# myfig.savefig('./figure1.tiff',bbox_inches='tight',dpi=300) "
-      ],
-      "metadata": {
-        "id": "VTuA8pwKEp71"
-      },
-      "execution_count": 60,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": 127,
+      "metadata": {
+        "id": "T95EdyUdEsm4"
+      },
+      "outputs": [],
       "source": [
         "# shap.summary_plot(shap_values, train_features, feature_names=train_features.columns,show = False)\n",
         "\n",
         "# myfig = plt.gcf()\n",
         "# myfig.savefig('./figure2.tiff',bbox_inches='tight',dpi=600) "
-      ],
-      "metadata": {
-        "id": "T95EdyUdEsm4"
-      },
-      "execution_count": 61,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": 128,
+      "metadata": {
+        "id": "ceM8hGRgE75x"
+      },
+      "outputs": [],
       "source": [
         "# from sklearn.metrics import plot_roc_curve\n",
         "# import matplotlib.pylab as plt\n",
@@ -2019,71 +2015,58 @@
         "# myfig = plt.gcf()\n",
         "# myfig.savefig('./figure3.tiff',dpi=300) \n",
         "# plt.show()"
-      ],
-      "metadata": {
-        "id": "ceM8hGRgE75x"
-      },
-      "execution_count": 62,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
+      "execution_count": 129,
+      "metadata": {
+        "id": "kUMNgHUTE9Uc"
+      },
+      "outputs": [],
       "source": [
         "# from sklearn.metrics import plot_confusion_matrix, plot_roc_curve\n",
         "\n",
         "# plot_confusion_matrix(xgb_clf, test_features, test_target)\n",
         "\n",
         "# plot_roc_curve(xgb_clf, test_features, test_target)\n"
-      ],
-      "metadata": {
-        "id": "kUMNgHUTE9Uc"
-      },
-      "execution_count": 63,
-      "outputs": []
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "# import pickle\n",
-        "# pickle.dump(xgb_clf,open(\"final_model.p\",\"wb\"))\n",
-        "import pickle\n",
-        "model_ = open(\"final_model.pkl\",\"wb\")\n",
-        "pickle.dump(xgb_clf,model_)\n",
-        "model_.close()\n",
-        "\n"
-      ],
+      "execution_count": 130,
       "metadata": {
         "id": "GKaXvK8EFSem"
       },
-      "execution_count": 64,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        "# import pickle\n",
+        "# pickle.dump(xgb_clf,open(\"final_model.p\",\"wb\"))\n",
+        "import joblib\n",
+        "joblib.dump(xgb_clf,open(\"final_model.pkl\",\"wb\"))"
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        ""
-      ],
+      "execution_count": 130,
       "metadata": {
         "id": "oGTxdFixTzj4"
       },
-      "execution_count": 64,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        ""
+      ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "import sklearn\n",
-        "sklearn_version =sklearn.__version__\n",
-        "print(sklearn_version)\n"
-      ],
+      "execution_count": 131,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "ZAbdqzFoFPCx",
-        "outputId": "009dc165-905b-4a2b-a981-f6e2a4e1e325"
+        "outputId": "d55ccc00-f416-458c-e781-4901064859c2"
       },
-      "execution_count": 65,
       "outputs": [
         {
           "output_type": "stream",
@@ -2092,128 +2075,134 @@
             "1.0.2\n"
           ]
         }
+      ],
+      "source": [
+        "import sklearn\n",
+        "sklearn_version = sklearn.__version__\n",
+        "print(sklearn_version)"
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        "!pip install streamlit\n",
-        "!pip install pyngrok===4.1.1\n",
-        "\n",
-        "from pyngrok import ngrok"
-      ],
+      "execution_count": 132,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "9JUMaN1jFtzL",
-        "outputId": "86beb138-1bb1-40fa-9f91-aaf8b313da80"
+        "outputId": "bad8e2b0-b109-4b0e-eac7-7b2afadd265e"
       },
-      "execution_count": 66,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
             "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
-            "Collecting streamlit\n",
-            "  Downloading streamlit-1.10.0-py2.py3-none-any.whl (9.1 MB)\n",
-            "\u001b[K     |█████████████████████▉          | 6.2 MB 22.0 MB/s eta 0:00:01\u001b[31mERROR: Exception:\n",
-            "Traceback (most recent call last):\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/urllib3/response.py\", line 438, in _error_catcher\n",
-            "    yield\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/urllib3/response.py\", line 519, in read\n",
-            "    data = self._fp.read(amt) if not fp_closed else b\"\"\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/cachecontrol/filewrapper.py\", line 62, in read\n",
-            "    data = self.__fp.read(amt)\n",
-            "  File \"/usr/lib/python3.7/http/client.py\", line 465, in read\n",
-            "    n = self.readinto(b)\n",
-            "  File \"/usr/lib/python3.7/http/client.py\", line 509, in readinto\n",
-            "    n = self.fp.readinto(b)\n",
-            "  File \"/usr/lib/python3.7/socket.py\", line 589, in readinto\n",
-            "    return self._sock.recv_into(b)\n",
-            "  File \"/usr/lib/python3.7/ssl.py\", line 1071, in recv_into\n",
-            "    return self.read(nbytes, buffer)\n",
-            "  File \"/usr/lib/python3.7/ssl.py\", line 929, in read\n",
-            "    return self._sslobj.read(len, buffer)\n",
-            "ConnectionResetError: [Errno 104] Connection reset by peer\n",
-            "\n",
-            "During handling of the above exception, another exception occurred:\n",
-            "\n",
-            "Traceback (most recent call last):\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/cli/base_command.py\", line 180, in _main\n",
-            "    status = self.run(options, args)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/cli/req_command.py\", line 199, in wrapper\n",
-            "    return func(self, options, args)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/commands/install.py\", line 319, in run\n",
-            "    reqs, check_supported_wheels=not options.target_dir\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/resolver.py\", line 128, in resolve\n",
-            "    requirements, max_rounds=try_to_avoid_resolution_too_deep\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/resolvelib/resolvers.py\", line 473, in resolve\n",
-            "    state = resolution.resolve(requirements, max_rounds=max_rounds)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/resolvelib/resolvers.py\", line 341, in resolve\n",
-            "    name, crit = self._merge_into_criterion(r, parent=None)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/resolvelib/resolvers.py\", line 172, in _merge_into_criterion\n",
-            "    if not criterion.candidates:\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/resolvelib/structs.py\", line 139, in __bool__\n",
-            "    return bool(self._sequence)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/found_candidates.py\", line 143, in __bool__\n",
-            "    return any(self)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/found_candidates.py\", line 129, in <genexpr>\n",
-            "    return (c for c in iterator if id(c) not in self._incompatible_ids)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/found_candidates.py\", line 33, in _iter_built\n",
-            "    candidate = func()\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/factory.py\", line 205, in _make_candidate_from_link\n",
-            "    version=version,\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/candidates.py\", line 312, in __init__\n",
-            "    version=version,\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/candidates.py\", line 151, in __init__\n",
-            "    self.dist = self._prepare()\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/candidates.py\", line 234, in _prepare\n",
-            "    dist = self._prepare_distribution()\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/resolution/resolvelib/candidates.py\", line 318, in _prepare_distribution\n",
-            "    self._ireq, parallel_builds=True\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/operations/prepare.py\", line 508, in prepare_linked_requirement\n",
-            "    return self._prepare_linked_requirement(req, parallel_builds)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/operations/prepare.py\", line 552, in _prepare_linked_requirement\n",
-            "    self.download_dir, hashes\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/operations/prepare.py\", line 243, in unpack_url\n",
-            "    hashes=hashes,\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/operations/prepare.py\", line 102, in get_http_url\n",
-            "    from_path, content_type = download(link, temp_dir.path)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/network/download.py\", line 157, in __call__\n",
-            "    for chunk in chunks:\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/cli/progress_bars.py\", line 152, in iter\n",
-            "    for x in it:\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_internal/network/utils.py\", line 86, in response_chunks\n",
-            "    decode_content=False,\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/urllib3/response.py\", line 576, in stream\n",
-            "    data = self.read(amt=amt, decode_content=decode_content)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/urllib3/response.py\", line 541, in read\n",
-            "    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)\n",
-            "  File \"/usr/lib/python3.7/contextlib.py\", line 130, in __exit__\n",
-            "    self.gen.throw(type, value, traceback)\n",
-            "  File \"/usr/local/lib/python3.7/dist-packages/pip/_vendor/urllib3/response.py\", line 455, in _error_catcher\n",
-            "    raise ProtocolError(\"Connection broken: %r\" % e, e)\n",
-            "pip._vendor.urllib3.exceptions.ProtocolError: (\"Connection broken: ConnectionResetError(104, 'Connection reset by peer')\", ConnectionResetError(104, 'Connection reset by peer'))\u001b[0m\n",
+            "Requirement already satisfied: streamlit in /usr/local/lib/python3.7/dist-packages (1.10.0)\n",
+            "Requirement already satisfied: gitpython!=3.1.19 in /usr/local/lib/python3.7/dist-packages (from streamlit) (3.1.27)\n",
+            "Requirement already satisfied: pyarrow in /usr/local/lib/python3.7/dist-packages (from streamlit) (6.0.1)\n",
+            "Requirement already satisfied: importlib-metadata>=1.4 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.11.4)\n",
+            "Requirement already satisfied: cachetools>=4.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.2.4)\n",
+            "Requirement already satisfied: tornado>=5.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (6.1)\n",
+            "Requirement already satisfied: pympler>=0.9 in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.0.1)\n",
+            "Requirement already satisfied: toml in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.10.2)\n",
+            "Requirement already satisfied: tzlocal in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.5.1)\n",
+            "Requirement already satisfied: blinker in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.4)\n",
+            "Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (7.1.2)\n",
+            "Requirement already satisfied: requests in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.23.0)\n",
+            "Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.21.6)\n",
+            "Requirement already satisfied: semver in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.13.0)\n",
+            "Requirement already satisfied: watchdog in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.1.9)\n",
+            "Requirement already satisfied: rich in /usr/local/lib/python3.7/dist-packages (from streamlit) (12.4.4)\n",
+            "Requirement already satisfied: validators in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.20.0)\n",
+            "Requirement already satisfied: altair>=3.2.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.2.0)\n",
+            "Requirement already satisfied: protobuf<4,>=3.12 in /usr/local/lib/python3.7/dist-packages (from streamlit) (3.17.3)\n",
+            "Requirement already satisfied: pydeck>=0.1.dev5 in /usr/local/lib/python3.7/dist-packages (from streamlit) (0.7.1)\n",
+            "Requirement already satisfied: python-dateutil in /usr/local/lib/python3.7/dist-packages (from streamlit) (2.8.2)\n",
+            "Requirement already satisfied: pandas>=0.21.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (1.3.5)\n",
+            "Requirement already satisfied: attrs in /usr/local/lib/python3.7/dist-packages (from streamlit) (21.4.0)\n",
+            "Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.7/dist-packages (from streamlit) (7.1.2)\n",
+            "Requirement already satisfied: typing-extensions in /usr/local/lib/python3.7/dist-packages (from streamlit) (4.1.1)\n",
+            "Requirement already satisfied: packaging in /usr/local/lib/python3.7/dist-packages (from streamlit) (21.3)\n",
+            "Requirement already satisfied: toolz in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (0.11.2)\n",
+            "Requirement already satisfied: jinja2 in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (2.11.3)\n",
+            "Requirement already satisfied: jsonschema>=3.0 in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (4.3.3)\n",
+            "Requirement already satisfied: entrypoints in /usr/local/lib/python3.7/dist-packages (from altair>=3.2.0->streamlit) (0.4)\n",
+            "Requirement already satisfied: gitdb<5,>=4.0.1 in /usr/local/lib/python3.7/dist-packages (from gitpython!=3.1.19->streamlit) (4.0.9)\n",
+            "Requirement already satisfied: smmap<6,>=3.0.1 in /usr/local/lib/python3.7/dist-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19->streamlit) (5.0.0)\n",
+            "Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/dist-packages (from importlib-metadata>=1.4->streamlit) (3.8.0)\n",
+            "Requirement already satisfied: importlib-resources>=1.4.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (5.7.1)\n",
+            "Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (0.18.1)\n",
+            "Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas>=0.21.0->streamlit) (2022.1)\n",
+            "Requirement already satisfied: six>=1.9 in /usr/local/lib/python3.7/dist-packages (from protobuf<4,>=3.12->streamlit) (1.15.0)\n",
+            "Requirement already satisfied: ipykernel>=5.1.2 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (6.15.0)\n",
+            "Requirement already satisfied: traitlets>=4.3.2 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (5.1.1)\n",
+            "Requirement already satisfied: ipywidgets>=7.0.0 in /usr/local/lib/python3.7/dist-packages (from pydeck>=0.1.dev5->streamlit) (7.7.0)\n",
+            "Requirement already satisfied: jupyter-client>=6.1.12 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (7.3.4)\n",
+            "Requirement already satisfied: pyzmq>=17 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (23.1.0)\n",
+            "Requirement already satisfied: nest-asyncio in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (1.5.5)\n",
+            "Requirement already satisfied: psutil in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (5.4.8)\n",
+            "Requirement already satisfied: ipython>=7.23.1 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (7.34.0)\n",
+            "Requirement already satisfied: debugpy>=1.0 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (1.0.0)\n",
+            "Requirement already satisfied: matplotlib-inline>=0.1 in /usr/local/lib/python3.7/dist-packages (from ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.1.3)\n",
+            "Requirement already satisfied: pickleshare in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.7.5)\n",
+            "Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (3.0.30)\n",
+            "Requirement already satisfied: decorator in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.4.2)\n",
+            "Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (57.4.0)\n",
+            "Requirement already satisfied: pygments in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (2.6.1)\n",
+            "Requirement already satisfied: jedi>=0.16 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.18.1)\n",
+            "Requirement already satisfied: pexpect>4.3 in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.8.0)\n",
+            "Requirement already satisfied: backcall in /usr/local/lib/python3.7/dist-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.2.0)\n",
+            "Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.2.0)\n",
+            "Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.1.0)\n",
+            "Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (3.6.0)\n",
+            "Requirement already satisfied: nbformat>=4.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.4.0)\n",
+            "Requirement already satisfied: parso<0.9.0,>=0.8.0 in /usr/local/lib/python3.7/dist-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.8.3)\n",
+            "Requirement already satisfied: MarkupSafe>=0.23 in /usr/local/lib/python3.7/dist-packages (from jinja2->altair>=3.2.0->streamlit) (2.0.1)\n",
+            "Requirement already satisfied: jupyter-core>=4.9.2 in /usr/local/lib/python3.7/dist-packages (from jupyter-client>=6.1.12->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (4.10.0)\n",
+            "Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.7/dist-packages (from nbformat>=4.2.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (2.15.3)\n",
+            "Requirement already satisfied: ptyprocess>=0.5 in /usr/local/lib/python3.7/dist-packages (from pexpect>4.3->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.7.0)\n",
+            "Requirement already satisfied: wcwidth in /usr/local/lib/python3.7/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit) (0.2.5)\n",
+            "Requirement already satisfied: notebook>=4.4.1 in /usr/local/lib/python3.7/dist-packages (from widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.3.1)\n",
+            "Requirement already satisfied: nbconvert in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.6.1)\n",
+            "Requirement already satisfied: Send2Trash in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.8.0)\n",
+            "Requirement already satisfied: terminado>=0.8.1 in /usr/local/lib/python3.7/dist-packages (from notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.13.3)\n",
+            "Requirement already satisfied: bleach in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (5.0.0)\n",
+            "Requirement already satisfied: pandocfilters>=1.4.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (1.5.0)\n",
+            "Requirement already satisfied: defusedxml in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.7.1)\n",
+            "Requirement already satisfied: mistune<2,>=0.8.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.8.4)\n",
+            "Requirement already satisfied: testpath in /usr/local/lib/python3.7/dist-packages (from nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.6.0)\n",
+            "Requirement already satisfied: webencodings in /usr/local/lib/python3.7/dist-packages (from bleach->nbconvert->notebook>=4.4.1->widgetsnbextension~=3.6.0->ipywidgets>=7.0.0->pydeck>=0.1.dev5->streamlit) (0.5.1)\n",
+            "Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.7/dist-packages (from packaging->streamlit) (3.0.9)\n",
+            "Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (3.0.4)\n",
+            "Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (1.24.3)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (2022.6.15)\n",
+            "Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.7/dist-packages (from requests->streamlit) (2.10)\n",
+            "Requirement already satisfied: commonmark<0.10.0,>=0.9.0 in /usr/local/lib/python3.7/dist-packages (from rich->streamlit) (0.9.1)\n",
             "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
-            "Collecting pyngrok===4.1.1\n",
-            "  Downloading pyngrok-4.1.1.tar.gz (18 kB)\n",
-            "Requirement already satisfied: future in /usr/local/lib/python3.7/dist-packages (from pyngrok===4.1.1) (0.16.0)\n",
+            "Requirement already satisfied: pyngrok===4.1.1 in /usr/local/lib/python3.7/dist-packages (4.1.1)\n",
             "Requirement already satisfied: PyYAML in /usr/local/lib/python3.7/dist-packages (from pyngrok===4.1.1) (3.13)\n",
-            "Building wheels for collected packages: pyngrok\n",
-            "  Building wheel for pyngrok (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
-            "  Created wheel for pyngrok: filename=pyngrok-4.1.1-py3-none-any.whl size=15983 sha256=654db423d849e1bc4ac3ac3ebf6953c7828b4e21847272c8265e1dbde5073131\n",
-            "  Stored in directory: /root/.cache/pip/wheels/b1/d9/12/045a042fee3127dc40ba6f5df2798aa2df38c414bf533ca765\n",
-            "Successfully built pyngrok\n",
-            "Installing collected packages: pyngrok\n",
-            "Successfully installed pyngrok-4.1.1\n"
+            "Requirement already satisfied: future in /usr/local/lib/python3.7/dist-packages (from pyngrok===4.1.1) (0.16.0)\n"
           ]
         }
+      ],
+      "source": [
+        "!pip install streamlit\n",
+        "!pip install pyngrok===4.1.1\n",
+        "\n",
+        "from pyngrok import ngrok"
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "AtiO8nd_F9XW"
+      },
+      "outputs": [],
       "source": [
         "%%writefile diagnosis-rct-app.py\n",
         "import streamlit as st\n",
@@ -2405,75 +2394,52 @@
         "if feedback:\n",
         "  st.header(\"Thank you for rating the app!\")\n",
         "  st.info(\"Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.\") "
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "AtiO8nd_F9XW",
-        "outputId": "9728b687-307f-41c1-99c8-9acd4c5a2bd3"
-      },
-      "execution_count": 67,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Writing diagnosis-rct-app.py\n"
-          ]
-        }
       ]
     },
     {
       "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "vTcdIhhUGBJz"
+      },
+      "outputs": [],
       "source": [
         "!nohup streamlit run healthy-heart-app.py &\n",
         "url = ngrok.connect(port='8501')\n",
         "url"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 70
-        },
-        "id": "vTcdIhhUGBJz",
-        "outputId": "bae014d1-4dbc-495d-9916-78cffd5558f2"
-      },
-      "execution_count": 68,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "nohup: appending output to 'nohup.out'\n",
-            "nohup: failed to run command 'streamlit': No such file or directory\n"
-          ]
-        },
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "'http://57ea-35-199-21-147.ngrok.io'"
-            ],
-            "application/vnd.google.colaboratory.intrinsic+json": {
-              "type": "string"
-            }
-          },
-          "metadata": {},
-          "execution_count": 68
-        }
       ]
     },
     {
       "cell_type": "code",
-      "source": [
-        ""
-      ],
+      "execution_count": 132,
       "metadata": {
         "id": "_7NHrfAAAyoE"
       },
-      "execution_count": 68,
-      "outputs": []
+      "outputs": [],
+      "source": [
+        ""
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "colab": {
+      "name": "diagnosis_of_rct.ipynb",
+      "provenance": [],
+      "mount_file_id": "1Sz8RjKv3ZhNnky3WM1TlnZMT0fFjbQcH",
+      "authorship_tag": "ABX9TyNjXAiZhp+7lGaDq3gdUVLr",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
 }
