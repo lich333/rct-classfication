@@ -11,8 +11,10 @@ import os
 #Load the saved model
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # model_b = os.path.join(APP_ROOT,'final_model.p') 
-model_a = open('final_model.pkl','rb')
-model = pkl.load(model_a)
+# model_a = open('final_model.pkl','rb')
+# model = pkl.load(model_a)
+with open("final_model.pkl", "rb") as pickle_file:
+    model = pickle.load(pickle_file)
    
 # model=pkl.load(open("final_model.p","rb"))
 
