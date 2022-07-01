@@ -1,9 +1,9 @@
 numpy
 pandas
 streamlit
-scikit-learn==1.0.2
+scikit-learn==0.24.2
 xgboost==0.90
 mlxtend
 networkx
-sklearn==0.0
+sklearn
 
