@@ -117,8 +117,6 @@ def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         
     user_input=[age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
-    user_input=user_input.reshape(1,-1)
-    user_input=scal.fit_transform(user_input)
     prediction = xgb.predict(user_input,validate_features=False)
   
 
@@ -189,7 +187,7 @@ st.sidebar.subheader("About App")
 
 st.sidebar.info("This web app is helps you to find out whether you are at a risk of developing a RCT.")
 st.sidebar.info("Enter the required fields and click on the 'Predict' button to check whether you have a healthy shoulder")
-st.sidebar.info("Don't forget to rate this app")
+
 
 
 
