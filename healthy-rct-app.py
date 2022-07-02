@@ -34,7 +34,7 @@ st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",ini
 
 
 
-def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
+def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
  
    
     if sex=="female":
@@ -115,7 +115,7 @@ def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
   
     
         
-    user_input=[age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
+    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
@@ -135,8 +135,8 @@ html_temp = """
 # display the front end aspect
 st.markdown(html_temp, unsafe_allow_html = True) 
 # following lines create boxes in which user can enter data required to make prediction
-age = st.slider("Age",min_value=0,max_value=100,step=1)
 sex = st.radio("Select Gender: ", ( 'female','male'))
+age = st.slider("Age",min_value=0,max_value=100,step=1)
 side=st.radio("is the painful shoulder your dominant side?", ['Yes','No'])
 trauma=st.radio("have you get injuried in your shoulder?", ['Yes','No'])
 jobe=st.radio("JOBE test", ['+','-'])
@@ -170,13 +170,15 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
-pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
+pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
              
-
-if st.button("Predict"):    
-#  if pred[0] == 0:
-    st.success('the  risk of rotator cuff tear is {}'.format(pred))
+ if pred[0] == 0:
+    st.error('Warning! You have high risk of getting rct!')
+    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
+   
+  else:
+    st.success('You have lower risk of getting rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
 #  else:
