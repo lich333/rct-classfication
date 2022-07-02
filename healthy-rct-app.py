@@ -172,8 +172,8 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
 pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
-             
- if pred[0] == 0:
+if st.button("Predict"):              
+  if pred[0] == 0:
     st.error('Warning! You have high risk of getting rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
