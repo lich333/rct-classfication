@@ -122,7 +122,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
     prediction = xgb.predict(user_input,validate_features=False)
   
 
-    return prediction
+    return int(prediction)
 
 
  # front end elements of the web page 
@@ -173,7 +173,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
 if st.button("Predict"):              
-  if pred[0] == 0:
+  if pred == 0:
     st.error('Warning! You have high risk of getting rct!,The age is {}'.format(pred))
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
