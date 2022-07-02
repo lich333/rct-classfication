@@ -175,14 +175,14 @@ pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,u
              
 
 if st.button("Predict"):    
- if pred[0] == 0:
-    st.success('You have lower risk of getting a rct!')
+#  if pred[0] == 0:
+    st.success('the  risk of rotator cuff tear is {}'.format(pred))
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
- else:
-    st.error('Warning! You have high risk of getting a rct!')
+#  else:
+#     st.error('Warning! You have high risk of getting a rct!')
     
-    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
+#     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
 
 
