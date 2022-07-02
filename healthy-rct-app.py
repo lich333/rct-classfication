@@ -174,11 +174,11 @@ pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,u
 
 if st.button("Predict"):              
   if pred[0] == 0:
-    st.error('Warning! You have high risk of getting rct!')
+    st.error('Warning! You have high risk of getting rct!','The age is {}'.format(pred))
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
   else:
-    st.success('You have lower risk of getting rct!')
+    st.success('You have lower risk of getting rct!','The age is {}'.format(pred))
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
 #  else:
