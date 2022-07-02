@@ -175,11 +175,14 @@ pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,u
              
 
 if st.button("Predict"):    
- if pred[0] == 1:
+ if pred == 1:
     st.error('Warning! You have high risk of getting a rct!')
+    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
  else:
     st.success('You have lower risk of getting a rct!')
+    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
+
 
 
 st.sidebar.subheader("About App")
@@ -190,8 +193,7 @@ st.sidebar.info("Don't forget to rate this app")
 
 
 
-feedback = st.sidebar.slider('How much would you rate this app?',min_value=0,max_value=5,step=1)
 
-if feedback:
-  st.header("Thank you for rating the app!")
-  st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
+
+
+  
