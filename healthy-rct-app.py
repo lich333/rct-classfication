@@ -37,9 +37,9 @@ st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",ini
 def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
  
    
-    if sex=="male":
-        sex=0
-    else: sex=1
+    if sex=="female":
+        sex=1
+    else: sex=0
     
     #age
         
