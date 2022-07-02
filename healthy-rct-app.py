@@ -18,7 +18,7 @@ scal=StandardScaler()
 # model = pkl.load(model_a)
 
 
-xgb_pickle = open('final_model.pkl', 'rb')
+xgb_pickle = open('final_model.p', 'rb')
 xgb = pickle.load(xgb_pickle)
 xgb_pickle.close()
 
@@ -117,8 +117,8 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         
     user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
-    user_input=user_input.reshape(1,-1)
-    user_input=scal.fit_transform(user_input)
+#     user_input=user_input.reshape(1,-1)
+#     user_input=scal.fit_transform(user_input)
     prediction = xgb.predict(user_input,validate_features=False)
   
 
