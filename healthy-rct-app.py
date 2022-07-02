@@ -3,8 +3,8 @@ import base64
 import sklearn
 import numpy as np
 import pickle 
-from sklearn.preprocessing import StandardScaler
-scal=StandardScaler()
+# from sklearn.preprocessing import StandardScaler
+# scal=StandardScaler()
 
 
 
