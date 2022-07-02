@@ -117,7 +117,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         
     user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
-    user_input=user_input.reshape(1,-1)
+#     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
     prediction = xgb.predict(user_input,validate_features=False)
   
@@ -148,7 +148,7 @@ ISs=st.selectbox('the strength of infraspinatus',range(1,6,1))
 ssc=st.selectbox('the strength of subscapularis ',range(1,6,1))
 ases = st.slider("ASES",min_value=0,max_value=100,step=1)
 const= st.slider("Constant-Murley",min_value=0,max_value=100,step=1)
-ucla = st.slider("UCLA",min_value=0,max_value=100,step=1)
+ucla = st.slider("UCLA",min_value=0,max_value=35,step=1)
 
 
 flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
@@ -173,8 +173,8 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
 if st.button("Predict"):              
-  if pred == 0:
-    st.error('Warning! You have high risk of getting rct!,The age is {}'.format(pred))
+  if pred == 1:
+    st.success('Warning! You have high risk of getting rct!,The age is {}'.format(pred))
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
   else:
