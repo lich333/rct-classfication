@@ -5,7 +5,7 @@ import numpy as np
 import pickle 
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
-import os
+
 
 
 
@@ -40,8 +40,7 @@ def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
     if sex=="female":
         sex=1
     else: sex=0
-    
-    #age
+
         
     if side=="Yes":
         side=1 
@@ -111,17 +110,17 @@ def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         erls=1 
     else: erls= 0
         
-    # ss is ssc ases const ucla
+
     
   
     
-
+        
     user_input=[age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
     user_input=scal.fit_transform(user_input)
-    prediction = xgb.predict(user_input)
-   
+    prediction = xgb.predict(user_input,validate_features=False)
+  
 
     return prediction
 
@@ -157,8 +156,7 @@ er=st.selectbox('External rotation',("0-20°","20-40°","40-60°","60-80°"))
 ir=st.selectbox('Internal rotation',("below S1","L1-L5","above T12"))
 vas=st.selectbox('VAS',("0-4","5-7","8-10°"))
 time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
-
-
+       
 
 # cp = st.selectbox('Chest Pain Type',("Typical angina","Atypical angina","Non-anginal pain","Asymptomatic")) 
 # trestbps=st.selectbox('Resting Blood Sugar',range(1,500,1))
@@ -173,6 +171,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
 pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
 
+             
 
 if st.button("Predict"):    
  if pred[0] == 0:
