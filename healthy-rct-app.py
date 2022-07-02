@@ -135,7 +135,7 @@ html_temp = """
 # display the front end aspect
 st.markdown(html_temp, unsafe_allow_html = True) 
 # following lines create boxes in which user can enter data required to make prediction
-age=st.selectbox ("Age",range(1,121,1))
+age = st.sidebar.slider("Age",min_value=0,max_value=100,step=1)
 sex = st.radio("Select Gender: ", ( 'female','male'))
 side=st.radio("is the painful shoulder your dominant side?", ['Yes','No'])
 trauma=st.radio("have you get injuried in your shoulder?", ['Yes','No'])
@@ -146,9 +146,10 @@ erls=st.radio("ERLS", ['+','-'])
 ss=st.selectbox('the strength of supraspinatus ',range(0,5,1))
 ISs=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
 ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
-ases=st.selectbox ("ASES",range(1,100,1))
-const=st.selectbox ("Constant-Murley",range(1,100,1))
-ucla=st.selectbox ("UCLA",range(1,100,1))
+ases = st.sidebar.slider("ASES",min_value=0,max_value=100,step=1)
+const= st.sidebar.slider("Constant-Murley",min_value=0,max_value=100,step=1)
+ucla = st.sidebar.slider("UCLA",min_value=0,max_value=100,step=1)
+
 
 flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
 abd=st.selectbox('Abduction',("0-45°","45-90°","90-135°","135-180°"))
