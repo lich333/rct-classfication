@@ -143,9 +143,9 @@ jobe=st.radio("JOBE test", ['+','-'])
 bear=st.radio("BEAR HUG", ['+','-'])
 belly=st.radio("BELLY PRESS", ['+','-'])
 erls=st.radio("ERLS", ['+','-'])
-ss=st.selectbox('the strength of supraspinatus ',range(0,5,1))
-ISs=st.selectbox('the strength of infraspinatus',range(0,5,1)) 
-ssc=st.selectbox('the strength of subscapularis ',range(0,5,1))
+ss=st.selectbox('the strength of supraspinatus ',range(1,6,1))
+ISs=st.selectbox('the strength of infraspinatus',range(1,6,1)) 
+ssc=st.selectbox('the strength of subscapularis ',range(1,6,1))
 ases = st.slider("ASES",min_value=0,max_value=100,step=1)
 const= st.slider("Constant-Murley",min_value=0,max_value=100,step=1)
 ucla = st.slider("UCLA",min_value=0,max_value=100,step=1)
@@ -155,7 +155,7 @@ flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
 abd=st.selectbox('Abduction',("0-45°","45-90°","90-135°","135-180°"))
 er=st.selectbox('External rotation',("0-20°","20-40°","40-60°","60-80°"))
 ir=st.selectbox('Internal rotation',("below S1","L1-L5","above T12"))
-vas=st.selectbox('VAS',("0-4","5-7","8-10°"))
+vas=st.selectbox('VAS',("0-4","5-7","8-10"))
 time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
        
 
@@ -175,7 +175,7 @@ pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,u
              
 
 if st.button("Predict"):    
- if pred[0] == 0:
+ if pred[0] == 1:
     st.error('Warning! You have high risk of getting a rct!')
 
  else:
