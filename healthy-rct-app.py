@@ -117,6 +117,8 @@ def preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
         
     user_input=[age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
+    user_input=user_input.reshape(1,-1)
+    user_input=scal.fit_transform(user_input)
     prediction = xgb.predict(user_input,validate_features=False)
   
 
@@ -173,7 +175,7 @@ pred=preprocess(age,sex,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,u
              
 
 if st.button("Predict"):    
- if pred == 1:
+ if pred[1] == 1:
     st.error('Warning! You have high risk of getting a rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
