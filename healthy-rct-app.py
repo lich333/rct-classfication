@@ -178,7 +178,7 @@ if st.button("Predict"):
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
   else:
-    st.success('You have lower risk of getting rct!')
+    st.error('You have lower risk of getting rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
 #  else:
