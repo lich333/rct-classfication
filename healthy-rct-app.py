@@ -34,7 +34,7 @@ st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",ini
 
 
 
-def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ):   
+def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,flex,abd,er,ir,vas,time ):   
  
    
     if sex=="female":
@@ -115,7 +115,7 @@ def preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,uc
   
     
         
-    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time ]
+    user_input=[sex,age,side,trauma,jobe,bear,belly,erls,flex,abd,er,ir,vas,time ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
 #     user_input=scal.fit_transform(user_input)
@@ -143,12 +143,12 @@ jobe=st.radio("JOBE test", ['+','-'])
 bear=st.radio("BEAR HUG", ['+','-'])
 belly=st.radio("BELLY PRESS", ['+','-'])
 erls=st.radio("ERLS", ['+','-'])
-ss=st.selectbox('the strength of supraspinatus ',range(1,6,1))
-ISs=st.selectbox('the strength of infraspinatus',range(1,6,1)) 
-ssc=st.selectbox('the strength of subscapularis ',range(1,6,1))
-ases = st.slider("ASES",min_value=0,max_value=100,step=1)
-const= st.slider("Constant-Murley",min_value=0,max_value=100,step=1)
-ucla = st.slider("UCLA",min_value=0,max_value=35,step=1)
+# ss=st.selectbox('the strength of supraspinatus ',range(1,6,1))
+# ISs=st.selectbox('the strength of infraspinatus',range(1,6,1)) 
+# ssc=st.selectbox('the strength of subscapularis ',range(1,6,1))
+# ases = st.slider("ASES",min_value=0,max_value=100,step=1)
+# const= st.slider("Constant-Murley",min_value=0,max_value=100,step=1)
+# ucla = st.slider("UCLA",min_value=0,max_value=35,step=1)
 
 
 flex=st.selectbox('Flexion',("0-45°","45-90°","90-135°","135-180°"))
@@ -170,7 +170,7 @@ time=st.selectbox('Duration of symptoms/months',("<3","3-6","6-12",">12"))
 
 
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
-pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,ss,ISs,ssc,ases,const,ucla,flex,abd,er,ir,vas,time)
+pred=preprocess(sex,age,side,trauma,jobe,bear,belly,erls,flex,abd,er,ir,vas,time)
 
 if st.button("Predict"):              
   if pred == 1:
