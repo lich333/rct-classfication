@@ -10,13 +10,13 @@ import os
 
 
 #Load the saved model
-# APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-# pkl_path = os.path.join(APP_ROOT,'final_model.pkl') 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+pkl_path = os.path.join(APP_ROOT,'final_model.p') 
 # model_a = open('final_model.pkl','rb')
 # model = pkl.load(model_a)
 
 
-xgb_pickle = open('final_model.p', 'rb')
+xgb_pickle = open(pkl_path, 'rb')
 xgb = pickle.load(xgb_pickle)
 xgb_pickle.close()
 
