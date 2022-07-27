@@ -50,13 +50,7 @@ def preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly
         vas=1
     else: vas=2
     
-    if time=="0-3":
-        time=0
-    elif time == "3-6":
-        time=1
-    elif time == "6-12":
-        time=2
-    else: time = 3
+
         
     if trauma=="Yes":
         trauma=1 
@@ -96,7 +90,7 @@ def preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly
   
     
         
-    user_input=[sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly,bear,ojobe,irls ]
+    user_input=[sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,erls,lift,belly,bear,ojobe,irls ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
 #     user_input=scal.fit_transform(user_input)
