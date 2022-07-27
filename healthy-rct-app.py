@@ -3,6 +3,7 @@ import base64
 import sklearn
 import numpy as np
 import pickle 
+import os
 
 
 
@@ -112,7 +113,7 @@ side=st.radio("is the painful shoulder your dominant side?", ['Yes','No'])
 vas = st.slider("VAS",min_value=0,max_value=10,step=1)
 time = st.slider("Duration of symptoms, months",min_value=0,max_value=24,step=1)
 trauma=st.radio("have you get injuried in your shoulder?", ['Yes','No'])
-flex=st.sliderx('Flexion',min_value=0,max_value=180,step=10)
+flex=st.slider('Flexion',min_value=0,max_value=180,step=10)
 abd=st.slider('Abduction',min_value=0,max_value=180,step=10)
 er=st.slider('External rotation',min_value=0,max_value=80,step=10)
 ir=st.slider('Internal rotation,= thi,butt,S 1,L5,L 3,L 1,T 11,T 9,T 7,T 5,T 3,= 0,1,2,3,4,5,6,7,8,9,10',min_value=0,max_value=10,step=1)
