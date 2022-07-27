@@ -3,7 +3,7 @@ import base64
 import sklearn
 import numpy as np
 import pickle 
-import os
+
 
 
 
@@ -142,11 +142,11 @@ pred=preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,erls,lift,belly
 
 if st.button("Predict"):              
   if pred == 1:
-    st.success('Warning! You have high risk of getting rct!)
+    st.success('Warning! You have high risk of getting rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
    
   else:
-    st.success('You have lower risk of getting rct!)
+    st.success('You have lower risk of getting rct!')
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
 
 #  else:
