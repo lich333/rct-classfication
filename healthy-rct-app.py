@@ -32,7 +32,7 @@ st.set_page_config(page_title="rct App",page_icon="⚕️",layout="centered",ini
 
 
 
-def preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly,bear,ojobe,irls ):   
+def preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,erls,lift,belly,bear,ojobe,irls ):   
  
    
     if sex=="female":
@@ -137,7 +137,7 @@ irls = st.radio("IRLS", ['+','-'])
 
 
 #user_input=preprocess(sex,cp,exang, fbs, slope, thal )
-pred=preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly,bear,ojobe,irls )
+pred=preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,erls,lift,belly,bear,ojobe,irls )
 
 if st.button("Predict"):              
   if pred == 1:
