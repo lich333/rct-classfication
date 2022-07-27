@@ -43,12 +43,7 @@ def preprocess(sex,age,side,vas,time,trauma,flex,abd,er,ir,jobe,,erls,lift,belly
     if side=="Yes":
         side=1 
     else: side=0
-        
-    if vas=="0-4":
-        vas=0
-    elif vas == "5-7":
-        vas=1
-    else: vas=2
+  
     
 
         
